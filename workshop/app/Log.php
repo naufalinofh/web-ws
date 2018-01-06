@@ -6,20 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Log extends Model
 {
-    public function getListAttribute($value)
+    public function customer()
     {
-        $separate = explode('|', $value);
-        $output = array(
-            'id' => explode(',', $separate[0]),
-            'jumlah' => explode(',', $separate[1])
-        );
-        return $output;
+        return $this->belongsTo('App\Customer');
     }
-    
-    public function setListAttribute($value)
+
+    public function service()
     {
-        $this->attributes['list'] = (implode(',', $value['id'])).
-                                    '|'.
-                                    (implode(',', $value['barang']));
+        return $this->hasOne('App\LogService', 'log_id');
+    }
+
+    public function good()
+    {
+        return $this->hasMany('App\Good');
     }
 }

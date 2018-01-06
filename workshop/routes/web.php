@@ -12,3 +12,5 @@
 */
 
 Route::get('/', 'Test@tester');
+
+Route::get('/coba', 'Test@connect');
