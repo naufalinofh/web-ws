@@ -1,4 +1,3 @@
-<<<<<<< HEAD:workshop/.gitignore
 /node_modules
 /public/hot
 /public/storage
@@ -10,7 +9,4 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-=======
-
->>>>>>> 809e7c9f99ecf6d4e21c47a4b133dc873d15359d:.gitignore
 .env
