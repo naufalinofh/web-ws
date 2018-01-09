@@ -15,11 +15,10 @@ class CreateLogsTable extends Migration
     {
         Schema::create('logs', function (Blueprint $table) {
             $table->increments('id');
-            $table->datetime('pinjam');
-            $table->datetime('kembali');
-            $table->string('list', 300);
-            $table->integer('nim');
-            $table->integer('client_id');
+            $table->integer('customer_id');
+            $table->datetime('pickup_time');
+            $table->datetime('prom_return_time');
+            $table->datetime('actual_return_time');
             $table->enum('status', ['tagged', 'picked', 'returned']);
             $table->timestamps();
         });

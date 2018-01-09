@@ -29,13 +29,13 @@ Route::get('/', function () {
     return view('customer/home', $data);
 })->name('home');
 
-Route::get('/portfolio', function () {
+Route::get('/projects', function () {
     $data = [
-        'title' => 'Portfolio'
+        'title' => 'Projects'
     ];
 
-    return view('customer/portfolio', $data);
-})->name('portfolio');
+    return view('customer/projects', $data);
+})->name('projects');
 
 Route::get('/catalog', function () {
     $data = [
