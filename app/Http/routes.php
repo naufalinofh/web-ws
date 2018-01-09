@@ -22,23 +22,43 @@
 */
 
 Route::get('/', function () {
-    return view('customer/home');
+    $data = [
+        'title' => 'Welcome to Workshop HME'
+    ];
+
+    return view('customer/home', $data);
 })->name('home');
 
 Route::get('/portfolio', function () {
-    return view('customer/portfolio');
+    $data = [
+        'title' => 'Portfolio'
+    ];
+
+    return view('customer/portfolio', $data);
 })->name('portfolio');
 
 Route::get('/catalog', function () {
-    return view('customer/catalog');
+    $data = [
+        'title' => 'Catalog'
+    ];
+
+    return view('customer/catalog', $data);
 })->name('catalog');
 
 Route::get('/rent', function () {
-    return view('customer/rent');
+    $data = [
+      'title' => 'Rental'
+    ];
+
+    return view('customer/rent', $data);
 })->name('rent');
 
 Route::get('/about', function () {
-    return view('customer/about');
+    $data = [
+        'title' => 'About Us'
+    ];
+
+    return view('customer/about', $data);
 })->name('about');
 
 
