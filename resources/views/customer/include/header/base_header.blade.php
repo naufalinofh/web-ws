@@ -23,6 +23,6 @@
     <link href="{{ asset('customer_assets/css/layout.min.css') }}" rel="stylesheet" type="text/css"/>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="logo_ws.ico"/>
 </head>
 <!-- END HEAD -->
