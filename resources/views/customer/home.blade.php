@@ -14,32 +14,45 @@
                 <ol class="carousel-indicators">
                     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
                     <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2" ></li>                    
                 </ol>
             </div>
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <img class="img-responsive" src="{{ asset('customer_assets/img/1920x1080/innovation.jpg') }}" alt="Slider Image">
+                    <img class="img-responsive" src="{{ asset('customer_assets/img/1920x1080/campus.jpg') }}" alt="WS HME">
                     <div class="container">
                         <div class="carousel-centered">
                             <div class="margin-b-40">
                                 <h1 class="carousel-title">{{ $title }}</h1>
-                                <p>Lorem ipsum dolor amet consectetur adipiscing dolore magna aliqua <br/> enim minim estudiat veniam siad venumus dolore</p>
+                                <p>WS HME is division inside HME ITB <br/>We are group of students who interested in practical electronics.</p>
                             </div>
                             <a href="#" class="btn-theme btn-theme-sm btn-white-brd text-uppercase">Explore</a>
                         </div>
                     </div>
                 </div>
                 <div class="item">
-                    <img class="img-responsive" src="{{ asset('customer_assets/img/1920x1080/02.jpg') }}" alt="Slider Image">
+                    <img class="img-responsive" src="{{ asset('customer_assets/img/1920x1080/innovation.jpg') }}" alt="Projects">
                     <div class="container">
                         <div class="carousel-centered">
                             <div class="margin-b-40">
-                                <h2 class="carousel-t itle">Hi-Tech Design</h2>
-                                <p>Lorem ipsum dolor amet consectetur adipiscing dolore magna aliqua <br/> enim minim estudiat veniam siad venumus dolore</p>
+                                <h3 class="carousel-title">Project</h3>
+                                <p>Make it real! <br/>We will make your idea in hardware development become reality</p>
                             </div>
-                            <a href="#" class="btn-theme btn-theme-sm btn-white-brd text-uppercase">Explore</a>
+                            <a href="{{ route('projects') }}" class="btn-theme btn-theme-sm btn-white-brd text-uppercase">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="img-responsive" src="{{ asset('customer_assets/img/1920x1080/rent.jpg') }}" alt="Slider Image">
+                    <div class="container">
+                        <div class="carousel-centered">
+                            <div class="margin-b-40">
+                                <h3 class="carousel-title">Rent</h3>
+                                <p>We rent electronics goods for Civitas Academica in ITB <br/> Booked now to prepare your event!</p>
+                            </div>
+                            <a href="{{ route('rent') }}" class="btn-theme btn-theme-sm btn-white-brd text-uppercase">Rent</a>
                         </div>
                     </div>
                 </div>
