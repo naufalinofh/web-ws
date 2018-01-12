@@ -26,7 +26,7 @@
                         <div class="carousel-centered">
                             <div class="margin-b-40">
                                 <h1 class="carousel-title">{{ $title }}</h1>
-                                <p>WS HME is division inside HME ITB <br/>We are group of students who interested in practical electronics.</p>
+                                <p class="carousel-caption">WS HME is division inside HME ITB <br/>We are group of students who interested in practical electronics.</p>
                             </div>
                             <a href="#" class="btn-theme btn-theme-sm btn-white-brd text-uppercase">Explore</a>
                         </div>

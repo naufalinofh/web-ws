@@ -981,6 +981,10 @@ fieldset[disabled] .btn-theme {
   text-transform: uppercase;
 }
 
+.carousel-caption {
+  color: #fff;
+  text-transform: uppercase;
+}
 @media (max-width: 768px) {
   .carousel-title {
     font-size: 60px;
