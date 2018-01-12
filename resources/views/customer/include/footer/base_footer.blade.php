@@ -8,13 +8,10 @@
                     <!-- List -->
                     <ul class="list-unstyled footer-list">
                         <li class="footer-list-item"><a class="footer-list-link" href="#">Home</a></li>
-                        <li class="footer-list-item"><a class="footer-list-link" href="#">About</a></li>
-                        <li class="footer-list-item"><a class="footer-list-link" href="#">Products</a></li>
-                        <li class="footer-list-item"><a class="footer-list-link" href="#">Pricing</a></li>
-                        <li class="footer-list-item"><a class="footer-list-link" href="#">Clients</a></li>
-                        <li class="footer-list-item"><a class="footer-list-link" href="#">Careers</a></li>
-                        <li class="footer-list-item"><a class="footer-list-link" href="#">Contact</a></li>
-                        <li class="footer-list-item"><a class="footer-list-link" href="#">Terms</a></li>
+                        <li class="footer-list-item"><a class="footer-list-link" href="{{ route('projects') }}">Projects</a></li>
+                        <li class="footer-list-item"><a class="footer-list-link" href="{{ route('catalog') }}">Catalogue</a></li>
+                        <li class="footer-list-item"><a class="footer-list-link" href="{{ route('rent') }}">Rent</a></li>
+                        <li class="footer-list-item"><a class="footer-list-link" href="{{ route('about') }}">About Us</a></li>
                     </ul>
                     <!-- End List -->
                 </div>

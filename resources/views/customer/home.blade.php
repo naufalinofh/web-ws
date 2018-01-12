@@ -33,18 +33,6 @@
                     </div>
                 </div>
                 <div class="item">
-                    <img class="img-responsive" src="{{ asset('customer_assets/img/1920x1080/innovation.jpg') }}" alt="Projects">
-                    <div class="container">
-                        <div class="carousel-centered">
-                            <div class="margin-b-40">
-                                <h3 class="carousel-title">Project</h3>
-                                <p>Make it real! <br/>We will make your idea in hardware development become reality</p>
-                            </div>
-                            <a href="{{ route('projects') }}" class="btn-theme btn-theme-sm btn-white-brd text-uppercase">Explore</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
                     <img class="img-responsive" src="{{ asset('customer_assets/img/1920x1080/rent.jpg') }}" alt="Slider Image">
                     <div class="container">
                         <div class="carousel-centered">
@@ -53,6 +41,18 @@
                                 <p>We rent electronics goods for Civitas Academica in ITB <br/> Booked now to prepare your event!</p>
                             </div>
                             <a href="{{ route('rent') }}" class="btn-theme btn-theme-sm btn-white-brd text-uppercase">Rent</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="img-responsive" src="{{ asset('customer_assets/img/1920x1080/innovation.jpg') }}" alt="Projects">
+                    <div class="container">
+                        <div class="carousel-centered">
+                            <div class="margin-b-40">
+                                <h3 class="carousel-title">Project</h3>
+                                <p>Make it real! <br/>We will make your idea in hardware development become reality</p>
+                            </div>
+                            <a href="{{ route('projects') }}" class="btn-theme btn-theme-sm btn-white-brd text-uppercase">Explore</a>
                         </div>
                     </div>
                 </div>
@@ -72,8 +72,8 @@
                                     <i class="service-icon icon-chemistry"></i>
                                 </div>
                                 <div class="service-info">
-                                    <h3>Art Of Coding</h3>
-                                    <p class="margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
+                                    <h3>Professional</h3>
+                                    <p class="margin-b-5">Solve</p>
                                 </div>
                                 <a href="#" class="content-wrapper-link"></a>    
                             </div>

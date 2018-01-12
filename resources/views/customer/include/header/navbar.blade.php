@@ -29,7 +29,7 @@
                     <ul class="navbar-nav navbar-nav-right">
                         <li class="nav-item"><a class="nav-item-child nav-item-hover {{$home_is_active}}" href="{{ route('home') }}">Home</a></li>
                         <li class="nav-item"><a class="nav-item-child nav-item-hover {{$projects_is_active}}" href="{{ route('projects') }}">Projects</a></li>
-                        <li class="nav-item"><a class="nav-item-child nav-item-hover {{$catalog_is_active}}" href="{{ route('catalog') }}">Catalog</a></li>
+                        <li class="nav-item"><a class="nav-item-child nav-item-hover {{$catalog_is_active}}" href="{{ route('catalog') }}">Catalogue</a></li>
                         <li class="nav-item"><a class="nav-item-child nav-item-hover {{$rent_is_active}}" href="{{ route('rent') }}">Rent</a></li>
                         <li class="nav-item"><a class="nav-item-child nav-item-hover {{$about_is_active}}" href="{{ route('about') }}">About Us</a></li>
                     </ul>
