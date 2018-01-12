@@ -16,8 +16,8 @@
                 <!-- Logo -->
                 <div class="logo">
                     <a class="logo-wrap" href="{{ route('home') }}">
-                        <img class="logo-img logo-img-main" src="{{ asset('customer_assets/img/logo.png') }}" alt="Asentus Logo">
-                        <img class="logo-img logo-img-active" src="{{ asset('customer_assets/img/logo-dark.png') }}" alt="Asentus Logo">
+                        <img class="logo-img logo-img-main" src="{{ asset('customer_assets/img/logo_ws.png') }}" style="height:65%; width:65%;" alt="WS logo">
+                        <img class="logo-img logo-img-active" src="{{ asset('customer_assets/img/logo_ws.png') }}" style="height:60%; width:60%;" alt="WS logo">
                     </a>
                 </div>
                 <!-- End Logo -->
