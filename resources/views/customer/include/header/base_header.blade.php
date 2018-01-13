@@ -22,6 +22,12 @@
     <!-- THEME STYLES -->
     <link href="{{ asset('customer_assets/css/layout.min.css') }}" rel="stylesheet" type="text/css"/>
 
+    <!-- DATEPICKER -->
+    <link href="{{ asset('customer_assets/css/datepicker.css') }}" rel="stylesheet" type="text/css"/>
+
+    <!-- CUSTOM CSS -->
+    <link href="{{ asset('customer_assets/css/custom.css') }}" rel="stylesheet" type="text/css"/>
+
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico"/>
 </head>
