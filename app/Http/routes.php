@@ -61,6 +61,13 @@ Route::get('/about', function () {
     return view('customer/about', $data);
 })->name('about');
 
+Route::get('/admin_dashboard', function () {
+    $data = [
+        'title' => 'Dashboard'
+    ];
+
+    return view('admin/dashboard', $data);
+})->name('admin_dashboard');
 
 
 /*
