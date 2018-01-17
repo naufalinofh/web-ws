@@ -87,7 +87,9 @@
                                 </div>
                                 <div class="service-info">
                                     <h3>Responsive Design</h3>
+                                    <div class = "font-yellow-crusta">
                                     <p class="margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
+                                    </div>
                                 </div>
                                 <a href="#" class="content-wrapper-link"></a>    
                             </div>
@@ -174,7 +176,7 @@
                 <div class="col-sm-4 sm-margin-b-50">
                     <div class="margin-b-20">
                         <div class="wow zoomIn" data-wow-duration=".3" data-wow-delay=".1s">
-                            <img class="img-responsive" src="{{ asset('customer_assets/img/970x647/01.jpg') }}" alt="Latest Products Image">
+                            <img class="img-responsive-product" src="{{ asset('customer_assets/img/970x647/01.jpg') }}" alt="Latest Products Image">
                         </div>
                     </div>
                     <h4><a href="#">Triangle Roof</a> <span class="text-uppercase margin-l-20">Management</span></h4>
