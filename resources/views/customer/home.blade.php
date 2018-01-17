@@ -26,7 +26,7 @@
                         <div class="carousel-centered">
                             <div class="margin-b-40">
                                 <h1 class="carousel-title">{{ $title }}</h1>
-                                <p class="carousel-caption">WS HME is division inside HME ITB <br/>We are group of students who interested in practical electronics.</p>
+                                <p> "WS HME is division inside HME ITB<br/>We are group of students who interested in practical electronics. </p>
                             </div>
                             <a href="#" class="btn-theme btn-theme-sm btn-white-brd text-uppercase">Explore</a>
                         </div>
@@ -65,15 +65,16 @@
         <div class="bg-color-sky-light" data-auto-height="true">
             <div class="content-lg container">
                 <div class="row row-space-1 margin-b-2">
+                <h2>Serahkan project anda pada kami</h2>
                     <div class="col-sm-4 sm-margin-b-2">
                         <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".3s">
                             <div class="service" data-height="height">
                                 <div class="service-element">
-                                    <i class="service-icon icon-chemistry"></i>
+                                    <i class="service-icon icon-trophy"></i>
                                 </div>
                                 <div class="service-info">
-                                    <h3>Art Of Coding</h3>
-                                    <p class="margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
+                                    <h3>Profesional</h3>
+                                    <p class="margin-b-5">Proyek ditangani oleh tenaga profesional anggota Himpunan Mahasiswa Elektroteknik</p>
                                 </div>
                                 <a href="#" class="content-wrapper-link"></a>    
                             </div>
@@ -83,11 +84,11 @@
                         <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".2s">
                             <div class="service" data-height="height">
                                 <div class="service-element">
-                                    <i class="service-icon icon-screen-tablet"></i>
+                                    <i class="service-icon icon-wallet"></i>
                                 </div>
                                 <div class="service-info">
-                                    <h3>Responsive Design</h3>
-                                    <p class="margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
+                                    <h3>Harga Terjangkau</h3>
+                                    <p class="margin-b-5">Harga disesuaikan dengan tingkat kesulitan proyek dan pas dengan kantong mahasiswa</p>
                                 </div>
                                 <a href="#" class="content-wrapper-link"></a>    
                             </div>
@@ -97,11 +98,11 @@
                         <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".1s">
                             <div class="service" data-height="height">
                                 <div class="service-element">
-                                    <i class="service-icon icon-badge"></i>
+                                    <i class="service-icon icon-speedometer"></i>
                                 </div>
                                 <div class="service-info">
-                                    <h3>Feature Reach</h3>
-                                    <p class="margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
+                                    <h3>Tepat Waktu</h3>
+                                    <p class="margin-b-5">Pengerjaan proyek selesai tepat waktu sesuai dengan kesepakatan</p>
                                 </div>
                                 <a href="#" class="content-wrapper-link"></a>    
                             </div>
@@ -111,6 +112,7 @@
                 <!--// end row -->
 
                 <div class="row row-space-1">
+                <h2><br/>Sewa alat elektronik tidak lagi rumit</h2>
                     <div class="col-sm-4 sm-margin-b-2">
                         <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".4s">
                             <div class="service" data-height="height">
@@ -118,8 +120,8 @@
                                     <i class="service-icon icon-notebook"></i>
                                 </div>
                                 <div class="service-info">
-                                    <h3>Useful Documentation</h3>
-                                    <p class="margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
+                                    <h3>Lengkap</h3>
+                                    <p class="margin-b-5">Menyediakan kebutuhan alat elektronik terlengkap untuk mendukung berbagai kegiatan</p>
                                 </div>
                                 <a href="#" class="content-wrapper-link"></a>    
                             </div>
@@ -129,11 +131,11 @@
                         <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".5s">
                             <div class="service" data-height="height">
                                 <div class="service-element">
-                                    <i class="service-icon icon-speedometer"></i>
+                                    <i class="service-icon icon-badge"></i>
                                 </div>
                                 <div class="service-info">
-                                    <h3>Fast Delivery</h3>
-                                    <p class="margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
+                                    <h3>Jaminan Kualitas</h3>
+                                    <p class="margin-b-5">Memberikan kualitas terbaik dari alat elektronik yang dipinjamkan</p>
                                 </div>
                                 <a href="#" class="content-wrapper-link"></a>    
                             </div>
@@ -143,11 +145,11 @@
                         <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".6s">
                             <div class="service" data-height="height">
                                 <div class="service-element">
-                                    <i class="service-icon icon-badge"></i>
+                                    <i class="service-icon icon-cursor"></i>
                                 </div>
                                 <div class="service-info">
-                                    <h3>Free Plugins</h3>
-                                    <p class="margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
+                                    <h3>Mudah</h3>
+                                    <p class="margin-b-5">Proses peminjaman yang cepat dan mudah serta dapat dilakukan dari jauh-jauh hari</p>
                                 </div>
                                 <a href="#" class="content-wrapper-link"></a>    
                             </div>
@@ -163,8 +165,8 @@
         <div class="content-lg container">
             <div class="row margin-b-40">
                 <div class="col-sm-6">
-                    <h2>Latest Products</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret dolore magna aliqua enim minim veniam exercitation</p>
+                    <h2>Our Projects</h2>
+                    <p>Workshop HME menerima berbagai macam proyek haardware maupun software elektronik sesuai dengan kebutuhan anda. Komunikasikan proyek anda segera dengan kami.</p>
                 </div>
             </div>
             <!--// end row -->
@@ -179,7 +181,6 @@
                     </div>
                     <h4><a href="#">Triangle Roof</a> <span class="text-uppercase margin-l-20">Management</span></h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incdidunt ut laboret dolor magna ut consequat siad esqudiat dolor</p>
-                    <a class="link" href="#">Read More</a>
                 </div>
                 <!-- End Latest Products -->
 
@@ -221,23 +222,12 @@
                     <!-- Swiper Wrapper -->
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <img class="swiper-clients-img" src="{{ asset('customer_assets/img/clients/01.png') }}" alt="Clients Logo">
+                            <img class="swiper-clients-img" src="{{ asset('customer_assets/img/clients/logo_hme.png') }}" alt="Clients Logo">
                         </div>
                         <div class="swiper-slide">
-                            <img class="swiper-clients-img" src="{{ asset('customer_assets/img/clients/02.png') }}" alt="Clients Logo">
+                            <img class="swiper-clients-img" src="{{ asset('customer_assets/img/clients/logo_ws_dark.png') }}" alt="Clients Logo">
                         </div>
-                        <div class="swiper-slide">
-                            <img class="swiper-clients-img" src="{{ asset('customer_assets/img/clients/03.png') }}" alt="Clients Logo">
-                        </div>
-                        <div class="swiper-slide">
-                            <img class="swiper-clients-img" src="{{ asset('customer_assets/img/clients/04.png') }}" alt="Clients Logo">
-                        </div>
-                        <div class="swiper-slide">
-                            <img class="swiper-clients-img" src="{{ asset('customer_assets/img/clients/05.png') }}" alt="Clients Logo">
-                        </div>
-                        <div class="swiper-slide">
-                            <img class="swiper-clients-img" src="{{ asset('customer_assets/img/clients/06.png') }}" alt="Clients Logo">
-                        </div>
+                        
                     </div>
                     <!-- End Swiper Wrapper -->
                 </div>
@@ -259,12 +249,9 @@
                             <div class="swiper-slide">
                                 <blockquote class="blockquote">
                                     <div class="margin-b-20">
-                                        Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret dolore magna aliqua. Ut enim minim veniam exercitation laboris ut siad consequat siad minim enum esqudiat dolore.
+                                        Proyektor dan layarnya bekerja dengan baik, bisa diambil dan dikembalikan tepat waktu.
                                     </div>
-                                    <div class="margin-b-20">
-                                        Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret tempor incididunt dolore magna consequat siad minim aliqua.
-                                    </div>
-                                    <p><span class="fweight-700 color-link">Joh Milner</span>, Metronic Customer</p>
+                                    <p><span class="fweight-700 color-link">Daniel Penigori</span>, SITH-R 2017, U-Green</p>
                                 </blockquote>
                             </div>
                             <div class="swiper-slide">
@@ -292,65 +279,6 @@
         <!-- End Testimonials -->
 
         <!-- Pricing -->
-        <div class="bg-color-sky-light">
-            <div class="content-lg container">
-                <div class="row row-space-1">
-                    <div class="col-sm-4 sm-margin-b-2">
-                        <!-- Pricing -->
-                        <div class="pricing">
-                            <div class="margin-b-30">
-                                <i class="pricing-icon icon-chemistry"></i>
-                                <h3>Starter Kit <span> - $</span> 49</h3>
-                                <p>Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
-                            </div>
-                            <ul class="list-unstyled pricing-list margin-b-50">
-                                <li class="pricing-list-item">Basic Features</li>
-                                <li class="pricing-list-item">Up to 5 products</li>
-                                <li class="pricing-list-item">50 Users Panels</li>
-                            </ul>
-                            <a href="pricing.html" class="btn-theme btn-theme-sm btn-default-bg text-uppercase">Choose</a>
-                        </div>
-                        <!-- End Pricing -->
-                    </div>
-                    <div class="col-sm-4 sm-margin-b-2">
-                        <!-- Pricing -->
-                        <div class="pricing pricing-active">
-                            <div class="margin-b-30">
-                                <i class="pricing-icon icon-badge"></i>
-                                <h3>Professional <span> - $</span> 149</h3>
-                                <p>Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
-                            </div>
-                            <ul class="list-unstyled pricing-list margin-b-50">
-                                <li class="pricing-list-item">Basic Features</li>
-                                <li class="pricing-list-item">Up to 100 products</li>
-                                <li class="pricing-list-item">100 Users Panels</li>
-                            </ul>
-                            <a href="pricing.html" class="btn-theme btn-theme-sm btn-default-bg text-uppercase">Choose</a>
-                        </div>
-                        <!-- End Pricing -->
-                    </div>
-                    <div class="col-sm-4">
-                        <!-- Pricing -->
-                        <div class="pricing">
-                            <div class="margin-b-30">
-                                <i class="pricing-icon icon-shield"></i>
-                                <h3>Advanced <span> - $</span> 249</h3>
-                                <p>Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
-                            </div>
-                            <ul class="list-unstyled pricing-list margin-b-50">
-                                <li class="pricing-list-item">Extended Features</li>
-                                <li class="pricing-list-item">Unlimited products</li>
-                                <li class="pricing-list-item">Unlimited Users Panels</li>
-                            </ul>
-                            <a href="pricing.html" class="btn-theme btn-theme-sm btn-default-bg text-uppercase">Choose</a>
-                        </div>
-                        <!-- End Pricing -->
-                    </div>
-                </div>
-                <!--// end row -->
-            </div>
-        </div>
-        <!-- End Pricing -->
 
         <!-- Promo Section -->
         <div class="promo-section overflow-h">
@@ -359,109 +287,23 @@
                     <div class="ver-center">
                         <div class="ver-center-aligned">
                             <div class="promo-section-col">
-                                <h2>Our Clients</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret dolore magna aliqua enim minim veniam exercitation ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret dolore magna aliqua enim minim veniam exercitation</p>
+                                <h2>Our Commitment</h2>
+                                <p>Workshop HME berkomitmen untuk terus memberikan yang terbaik bagi pelanggan.</p>
                                 <p>Ipsum dolor sit amet consectetur adipiscing elit sed tempor incididut ut sead laboret dolore magna aliqua enim minim veniam exercitation ipsum dolor sit amet consectetur adipiscing</p>
+                                <p>Ipsum dolor sit amet consectetur adipiscing elit sed tempor incididut ut sead laboret dolore magna aliqua enim minim veniam exercitation ipsum dolor sit amet consectetur adipiscing</p>
+                                <p>Ipsum dolor sit amet consectetur adipiscing elit sed tempor incididut ut sead laboret dolore magna aliqua enim minim veniam exercitation ipsum dolor sit amet consectetur adipiscing</p>
+                                
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="promo-section-img-right">
-                <img class="img-responsive" src="{{ asset('customer_assets/img/970x970/01.jpg') }}" alt="Content Image">
+                <img class="img-responsive" src="{{ asset('customer_assets/img/970x970/fototim.jpg') }}" alt="Content Image">
             </div>
         </div>
         <!-- End Promo Section -->
 
-        <!-- Work -->
-        <div class="bg-color-sky-light overflow-h">
-            <div class="content-lg container">
-                <div class="row margin-b-40">
-                    <div class="col-sm-6">
-                        <h2>Showcase</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret dolore magna aliqua enim minim veniam exercitation</p>
-                    </div>
-                </div>
-                <!--// end row -->
-
-                <!-- Masonry Grid -->
-                <div class="masonry-grid">
-                    <div class="masonry-grid-sizer col-xs-6 col-sm-6 col-md-1"></div>
-                    <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-8">
-                        <!-- Work -->
-                        <div class="work wow fadeInUp" data-wow-duration=".3" data-wow-delay=".1s">
-                            <div class="work-overlay">
-                                <img class="full-width img-responsive" src="{{ asset('customer_assets/img/800x400/01.jpg') }}" alt="Portfolio Image">
-                            </div>
-                            <div class="work-content">
-                                <h3 class="color-white margin-b-5">Art Of Coding</h3>
-                                <p class="color-white margin-b-0">Lorem ipsum dolor sit amet consectetur adipiscing</p>
-                            </div>
-                            <a class="content-wrapper-link" href="#"></a>
-                        </div>
-                        <!-- End Work -->
-                    </div>
-                    <div class="masonry-grid-item col-xs-6 col-sm-6 col-md-4">
-                        <!-- Work -->
-                        <div class="work wow fadeInUp" data-wow-duration=".3" data-wow-delay=".2s">
-                            <div class="work-overlay">
-                                <img class="full-width img-responsive" src="{{ asset('customer_assets/img/397x400/01.jpg') }}" alt="Portfolio Image">
-                            </div>
-                            <div class="work-content">
-                                <h3 class="color-white margin-b-5">Clean Design</h3>
-                                <p class="color-white margin-b-0">Lorem ipsum dolor sit amet consectetur adipiscing</p>
-                            </div>
-                            <a class="content-wrapper-link" href="#"></a>
-                        </div>
-                        <!-- End Work -->
-                    </div>
-                    <div class="masonry-grid-item col-xs-6 col-sm-6 col-md-4">
-                        <!-- Work -->
-                        <div class="work wow fadeInUp" data-wow-duration=".3" data-wow-delay=".3s">
-                            <div class="work-overlay">
-                                <img class="full-width img-responsive" src="{{ asset('customer_assets/img/397x300/01.jpg') }}" alt="Portfolio Image">
-                            </div>
-                            <div class="work-content">
-                                <h3 class="color-white margin-b-5">Clean Design</h3>
-                                <p class="color-white margin-b-0">Lorem ipsum dolor sit amet consectetur adipiscing</p>
-                            </div>
-                            <a class="content-wrapper-link" href="#"></a>
-                        </div>
-                        <!-- End Work -->
-                    </div>
-                    <div class="masonry-grid-item col-xs-6 col-sm-6 col-md-4">
-                        <!-- Work -->
-                        <div class="work wow fadeInUp" data-wow-duration=".3" data-wow-delay=".4s">
-                            <div class="work-overlay">
-                                <img class="full-width img-responsive" src="{{ asset('customer_assets/img/397x300/02.jpg') }}" alt="Portfolio Image">
-                            </div>
-                            <div class="work-content">
-                                <h3 class="color-white margin-b-5">Clean Design</h3>
-                                <p class="color-white margin-b-0">Lorem ipsum dolor sit amet consectetur adipiscing</p>
-                            </div>
-                            <a class="content-wrapper-link" href="#"></a>
-                        </div>
-                        <!-- End Work -->
-                    </div>
-                    <div class="masonry-grid-item col-xs-6 col-sm-6 col-md-4">
-                        <!-- Work -->
-                        <div class="work wow fadeInUp" data-wow-duration=".3" data-wow-delay=".5s">
-                            <div class="work-overlay">
-                                <img class="full-width img-responsive" src="{{ asset('customer_assets/img/397x300/03.jpg') }}" alt="Portfolio Image">
-                            </div>
-                            <div class="work-content">
-                                <h3 class="color-white margin-b-5">Clean Design</h3>
-                                <p class="color-white margin-b-0">Lorem ipsum dolor sit amet consectetur adipiscing</p>
-                            </div>
-                            <a class="content-wrapper-link" href="#"></a>
-                        </div>
-                        <!-- End Work -->
-                    </div>
-                </div>
-                <!-- End Masonry Grid -->
-            </div>
-        </div>
-        <!-- End Work -->
         <!--========== END PAGE LAYOUT ==========-->
 
         @include('customer.include.footer.base_footer')
