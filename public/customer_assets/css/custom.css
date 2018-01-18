@@ -17,3 +17,19 @@
     height: 3px;
     border-radius: 50px;
 }
+
+.custom-center-inventory-title {
+    text-align: center !important;
+}
+
+.custom-right-text-align {
+    text-align: right;
+}
+
+.custom-inventory-quantity {
+    margin-right: 15px;
+}
+
+.custom-form-date {
+    border: 1px #000 solid !important;
+}
