@@ -26,7 +26,7 @@
                         <div class="carousel-centered">
                             <div class="margin-b-40">
                                 <h1 class="carousel-title">{{ $title }}</h1>
-                                <p> "WS HME is division inside HME ITB<br/>We are group of students who interested in practical electronics. </p>
+                                <p> WS HME ialah suatu divisi dalam HME ITB<br/>Divisi ini bergerak dalam bidang keprofesian elektronika praktis</p>
                             </div>
                             <a href="#" class="btn-theme btn-theme-sm btn-white-brd text-uppercase">Explore</a>
                         </div>
@@ -38,7 +38,8 @@
                         <div class="carousel-centered">
                             <div class="margin-b-40">
                                 <h3 class="carousel-title">Rent</h3>
-                                <p>We rent electronics goods for Civitas Academica in ITB <br/> Booked now to prepare your event!</p>
+                                <p>WS HME menyediakan penyewaan barang-barang elektronik untuk keperluan penyelenggaraan acara.<br>
+                                     Pesan sekarang juga melalui website ini.</p>
                             </div>
                             <a href="{{ route('rent') }}" class="btn-theme btn-theme-sm btn-white-brd text-uppercase">Rent</a>
                         </div>
@@ -50,7 +51,7 @@
                         <div class="carousel-centered">
                             <div class="margin-b-40">
                                 <h3 class="carousel-title">Project</h3>
-                                <p>Make it real! <br/>We will make your idea in hardware development become reality</p>
+                                <p>Make it real! <br/>Wujudkan idemu dan temukan solusi dalam proyek hardware bersama kami</p>
                             </div>
                             <a href="{{ route('projects') }}" class="btn-theme btn-theme-sm btn-white-brd text-uppercase">Explore</a>
                         </div>
@@ -102,7 +103,7 @@
                                 </div>
                                 <div class="service-info">
                                     <h3>Tepat Waktu</h3>
-                                    <p class="margin-b-5">Pengerjaan proyek selesai tepat waktu sesuai dengan kesepakatan</p>
+                                    <p class="margin-b-5">Pengerjaan proyek tepat waktu sesuai dengan kesepakatan</p>
                                 </div>
                                 <a href="#" class="content-wrapper-link"></a>    
                             </div>
@@ -166,7 +167,7 @@
             <div class="row margin-b-40">
                 <div class="col-sm-6">
                     <h2>Our Projects</h2>
-                    <p>Workshop HME menerima berbagai macam proyek haardware maupun software elektronik sesuai dengan kebutuhan anda. Komunikasikan proyek anda segera dengan kami.</p>
+                    <p>WS HME menerima berbagai macam proyek haardware maupun software elektronik sesuai dengan kebutuhan anda. Komunikasikan proyek Anda segera dengan kami.</p>
                 </div>
             </div>
             <!--// end row -->
@@ -240,7 +241,7 @@
         <div class="content-lg container">
             <div class="row">
                 <div class="col-sm-9">
-                    <h2>Customer Reviews</h2>
+                    <h2>Testimoni</h2>
 
                     <!-- Swiper Testimonials -->
                     <div class="swiper-slider swiper-testimonials">
@@ -257,12 +258,13 @@
                             <div class="swiper-slide">
                                 <blockquote class="blockquote">
                                     <div class="margin-b-20">
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                        Overall 9 out of 10. Dari diskusi awal sudah bersikap profesional dan bisa memberikan masukan dan penjelasan ke klien yang awam agar paham.
+                                        Bagiku kalian udah cukup berhasil berhadapan dengan wearable device yang pas itu masih jarang di Indonesia.
                                     </div>
                                     <div class="margin-b-20">
-                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                        Proyek Wearable Dress with Smart LED/ Dipamerkan di Fashion Future Goethe Institut Thailand, Desember 2016
                                     </div>
-                                    <p><span class="fweight-700 color-link">Alex Clarson</span>, Metronic Customer</p>
+                                    <p><span class="fweight-700 color-link">Innamia Indriani</span>Fashion Designer, International Textile and Costume Congress-ITB</p>
                                 </blockquote>
                             </div>
                         </div>
@@ -288,10 +290,10 @@
                         <div class="ver-center-aligned">
                             <div class="promo-section-col">
                                 <h2>Our Commitment</h2>
-                                <p>Workshop HME berkomitmen untuk terus memberikan yang terbaik bagi pelanggan.</p>
-                                <p>Ipsum dolor sit amet consectetur adipiscing elit sed tempor incididut ut sead laboret dolore magna aliqua enim minim veniam exercitation ipsum dolor sit amet consectetur adipiscing</p>
-                                <p>Ipsum dolor sit amet consectetur adipiscing elit sed tempor incididut ut sead laboret dolore magna aliqua enim minim veniam exercitation ipsum dolor sit amet consectetur adipiscing</p>
-                                <p>Ipsum dolor sit amet consectetur adipiscing elit sed tempor incididut ut sead laboret dolore magna aliqua enim minim veniam exercitation ipsum dolor sit amet consectetur adipiscing</p>
+                                <p>WS selalu berusaha mengembangkan kemampuan dan kebutuhan HME dalam bidang elektronika praktis.</p>
+                                <p>WS HME berkomitmen untuk terus memberikan yang terbaik bagi pelanggan melalui penyewaan dan proyek yang dijalani</p>
+                                <p>Kami sudah berpengalaman melayani penyewaan sejak 1973</p>
+                                <p>Ratusan proyek telah terlaksana dari berbagai klien baik mahasiswa, swasta, organisasi, maupun pemerintah sejak 1990</p>
                                 
                             </div>
                         </div>

@@ -9,7 +9,7 @@
                     <ul class="list-unstyled footer-list">
                         <li class="footer-list-item"><a class="footer-list-link" href="#">Home</a></li>
                         <li class="footer-list-item"><a class="footer-list-link" href="{{ route('projects') }}">Projects</a></li>
-                        <li class="footer-list-item"><a class="footer-list-link" href="{{ route('catalog') }}">Catalogue</a></li>
+                        <li class="footer-list-item"><a class="footer-list-link" href="{{ route('catalog') }}">Catalog</a></li>
                         <li class="footer-list-item"><a class="footer-list-link" href="{{ route('rent') }}">Rent</a></li>
                         <li class="footer-list-item"><a class="footer-list-link" href="{{ route('about') }}">About Us</a></li>
                     </ul>
@@ -18,13 +18,14 @@
                 <div class="col-sm-4 sm-margin-b-30">
                     <!-- List -->
                     <ul class="list-unstyled footer-list">
-                        <li class="footer-list-item"><a class="footer-list-link" href="#">Twitter</a></li>
+                        <li class="footer-list-item"><a class="footer-list-link" href="http://line.me/ti/p/%40pao0271y">Line</a></li>
                         <li class="footer-list-item"><a class="footer-list-link" href="#">Facebook</a></li>
                         <li class="footer-list-item"><a class="footer-list-link" href="#">Instagram</a></li>
                         <li class="footer-list-item"><a class="footer-list-link" href="#">YouTube</a></li>
                     </ul>
                     <!-- End List -->
                 </div>
+                <!-- 
                 <div class="col-sm-5 sm-margin-b-30">
                     <h2 class="color-white">Send Us A Note</h2>
                     <input type="text" class="form-control footer-input margin-b-20" placeholder="Name" required>
@@ -32,7 +33,7 @@
                     <input type="text" class="form-control footer-input margin-b-20" placeholder="Phone" required>
                     <textarea class="form-control footer-input margin-b-30" rows="6" placeholder="Message" required></textarea>
                     <button type="submit" class="btn-theme btn-theme-sm btn-base-bg text-uppercase">Submit</button>
-                </div>
+                </div>-->
             </div>
             <!--// end row -->
         </div>
@@ -43,10 +44,11 @@
     <div class="content container">
         <div class="row">
             <div class="col-xs-6">
-                <img class="footer-logo" src="{{ asset('customer_assets/img/logo.png') }}" alt="Asentus Logo">
+                <img class="footer-logo" style="max-height: 50px; width: auto;" src="{{ asset('customer_assets/img/logo_ws.png') }}" alt="WS logo">
             </div>
             <div class="col-xs-6 text-right">
-                <p class="margin-b-0"><a class="color-base fweight-700" href="http://keenthemes.com/preview/asentus/">Asentus</a> Theme Powered by: <a class="color-base fweight-700" href="http://www.keenthemes.com/">KeenThemes.com</a></p>
+                <p class="margin-b-0">Created by: WS HME with Divkom HME<br> 
+                    Powered by: <a class="color-base fweight-700" href="http://www.keenthemes.com/">KeenThemes</a></p>
             </div>
         </div>
         <!--// end row -->
