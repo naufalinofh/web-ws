@@ -44,7 +44,7 @@ Route::get('/rent', function () {
       'title' => 'Rental'
     ];
 
-    return view('customer/rent', $data);
+    return view('customer/hapus', $data);
 })->name('rent');
 
 Route::get('/about', function () {
