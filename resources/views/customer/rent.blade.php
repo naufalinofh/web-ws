@@ -14,76 +14,197 @@
         <!-- Service -->
         <div class="bg-color-sky-light" data-auto-height="true">
             <div class="content-lg container">
-                <div class="row row-space-1 margin-b-2">
-                    <div class="col-sm-6 sm-margin-b-2">
-                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".2s">
-                            <div class="service" data-height="height">
-                                <h3>{{ $title }}</h3>
-                                <p class="margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
-                                <a href="#" class="content-wrapper-link"></a>    
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".1s">
-                            <div class="service" data-height="height">
-                                <h3>Responsive Design</h3>
-                                <p class="margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
-                                <a href="#" class="content-wrapper-link"></a>    
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--// end row -->
 
-                <div class="row row-space-1 margin-b-2">
-                    <div class="col-sm-6 sm-margin-b-2">
-                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".3s">
-                            <div class="service" data-height="height">
-                                <h3>Feature Reach</h3>
-                                <p class="margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
-                                <a href="#" class="content-wrapper-link"></a>    
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".2s">
-                            <div class="service" data-height="height">
-                                <h3>Useful Documentation</h3>
-                                <p class="margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
-                                <a href="#" class="content-wrapper-link"></a>    
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--// end row -->
+                <h1 class="custom-form-title">Rental Form</h1>
+                <h5 class="custom-form-title">Please fill in all fields to rent the items</h5>
 
-                <div class="row row-space-1">
-                    <div class="col-sm-6 sm-margin-b-2">
-                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".4s">
-                            <div class="service" data-height="height">
-                                <h3>Fast Delivery</h3>
-                                <p class="margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
-                                <a href="#" class="content-wrapper-link"></a>    
+                <br><br>
+
+                <form>
+
+                    <div>
+                        <div class="form form-group col col-sm-3">
+                            <div class="form-group">
+                                <label class="custom-form-text" for="date">Tanggal Pinjam:</label>
+                                <input class="form-control custom-form-date" id="rent_date" type="date" >
+
+                            </div>
+                        </div>
+
+                        <div class="form form-group col col-sm-3">
+                            <div class="form-group">
+                                <label class="custom-form-text" for="date">Jam Pinjam:</label>
+                                <input class="form-control custom-form-date" id="rent_hour" type="time" >
+
+                            </div>
+                        </div>
+
+                        <div class="form form-group col col-sm-3">
+                            <div class="form-group">
+                                <label class="custom-form-text" for="date">Tanggal Kembali:</label>
+                                <input class="form-control custom-form-date" id="return_date" type="date" >
+
+                            </div>
+                        </div>
+
+                        <div class="form form-group col col-sm-3">
+                            <div class="form-group">
+                                <label class="custom-form-text" for="date">Jam Kembali:</label>
+                                <input class="form-control custom-form-date" id="return_hour" type="time" >
+
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6">
-                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".3s">
-                            <div class="service" data-height="height">
-                                <h3>Free Plugins</h3>
-                                <p class="margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
-                                <a href="#" class="content-wrapper-link"></a>    
+
+                    {{--<div class="form-group col-sm-12 custom-form-divider"></div>--}}
+
+                    <div id="available_inventory">
+                        <div>
+                            <div class="col-sm-6 col-md-4">
+                                <div class="thumbnail">
+                                    <img src="{{ asset('customer_assets/img/inventory/Proyektor.png') }}" alt="...">
+                                    <div class="caption custom-center-inventory-title">
+                                        <h3>Proyektor</h3>
+
+                                        <div class="custom-right-text-align">
+                                            <select class="custom-inventory-quantity">
+                                                <option value = "0">0</option>
+                                                <option value = "1">1</option>
+                                                <option value = "2">2</option>
+                                                <option value = "3">3</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                </div>
                             </div>
+
+                            <div class="col-sm-6 col-md-4">
+                                <div class="thumbnail">
+                                    <img src="{{ asset('customer_assets/img/inventory/Proyektor.png') }}" alt="...">
+                                    <div class="caption custom-center-inventory-title">
+                                        <h3>Proyektor</h3>
+
+                                        <div class="custom-right-text-align">
+                                            <select class="custom-inventory-quantity">
+                                                <option value = "0">0</option>
+                                                <option value = "1">1</option>
+                                                <option value = "2">2</option>
+                                                <option value = "3">3</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md-4">
+                                <div class="thumbnail">
+                                    <img src="{{ asset('customer_assets/img/inventory/Proyektor.png') }}" alt="...">
+                                    <div class="caption custom-center-inventory-title">
+                                        <h3>Proyektor</h3>
+
+                                        <div class="custom-right-text-align">
+                                            <select class="custom-inventory-quantity">
+                                                <option value = "0">0</option>
+                                                <option value = "1">1</option>
+                                                <option value = "2">2</option>
+                                                <option value = "3">3</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md-4">
+                                <div class="thumbnail">
+                                    <img src="{{ asset('customer_assets/img/inventory/Proyektor.png') }}" alt="...">
+                                    <div class="caption custom-center-inventory-title">
+                                        <h3>Proyektor</h3>
+
+                                        <div class="custom-right-text-align">
+                                            <select class="custom-inventory-quantity">
+                                                <option value = "0">0</option>
+                                                <option value = "1">1</option>
+                                                <option value = "2">2</option>
+                                                <option value = "3">3</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md-4">
+                                <div class="thumbnail">
+                                    <img src="{{ asset('customer_assets/img/inventory/Proyektor.png') }}" alt="...">
+                                    <div class="caption custom-center-inventory-title">
+                                        <h3>Proyektor</h3>
+
+                                        <div class="custom-right-text-align">
+                                            <select class="custom-inventory-quantity">
+                                                <option value = "0">0</option>
+                                                <option value = "1">1</option>
+                                                <option value = "2">2</option>
+                                                <option value = "3">3</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md-4">
+                                <div class="thumbnail">
+                                    <img src="{{ asset('customer_assets/img/inventory/Proyektor.png') }}" alt="...">
+                                    <div class="caption custom-center-inventory-title">
+                                        <h3>Proyektor</h3>
+
+                                        <div class="custom-right-text-align">
+                                            <select class="custom-inventory-quantity">
+                                                <option value = "0">0</option>
+                                                <option value = "1">1</option>
+                                                <option value = "2">2</option>
+                                                <option value = "3">3</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        {{--<div class="form-group col-sm-12 custom-form-divider"></div>--}}
+
+                        <div class="form form-group col col-sm-12">
+                            <div class="form-group">
+                                <label class="custom-form-text" for="name">Name:</label>
+                                <input type="text" class="form-control custom-form-border" id="name" placeholder="ex: Nyoman Abiwinanda">
+                            </div>
+                            <div class="form-group">
+                                <label class="custom-form-text" for="nim">NIM:</label>
+                                <input type="number" class="form-control custom-form-border" id="nim" placeholder="ex: 13214096">
+                            </div>
+                            <div class="form-group">
+                                <label class="custom-form-text" for="institution">Institution:</label>
+                                <input type="text" class="form-control custom-form-border" id="institution" placeholder="ex: URO">
+                            </div>
+                            <button type="submit" class="btn btn-default">Submit</button>
                         </div>
                     </div>
-                </div>
-                <!--// end row -->
+
+                </form>
+
             </div>
         </div>
         <!-- End Service -->
 
         <!--========== END PAGE LAYOUT ==========-->
+
+
 
         @include('customer.include.footer.base_footer')
 

@@ -66,6 +66,9 @@
 <script src="{{ asset('customer_assets/vendor/jquery-migrate.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('customer_assets/vendor/bootstrap/js/bootstrap.min.js') }}" type="text/javascript"></script>
 
+<!-- FORM CONTROL -->
+<script src="{{ asset('customer_assets/js/form_control.js') }}" type="text/javascript"></script>
+
 <!-- PAGE LEVEL PLUGINS -->
 <script src="{{ asset('customer_assets/vendor/jquery.easing.js') }}" type="text/javascript"></script>
 <script src="{{ asset('customer_assets/vendor/jquery.back-to-top.js') }}" type="text/javascript"></script>
