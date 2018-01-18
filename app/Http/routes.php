@@ -37,13 +37,7 @@ Route::get('/projects', function () {
     return view('customer/projects', $data);
 })->name('projects');
 
-Route::get('/catalog', function () {
-    $data = [
-        'title' => 'Catalog'
-    ];
-
-    return view('customer/catalog', $data);
-})->name('catalog');
+Route::get('/catalog', 'CatalogController@index')->name('catalog');
 
 Route::get('/rent', function () {
     $data = [
@@ -68,7 +62,6 @@ Route::get('/admin_dashboard', function () {
 
     return view('admin/dashboard', $data);
 })->name('admin_dashboard');
-
 
 /*
 |--------------------------------------------------------------------------

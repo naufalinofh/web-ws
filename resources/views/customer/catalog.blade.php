@@ -7,7 +7,17 @@
               'rent_is_active'      => '',
               'about_is_active'     => ''])
 
-    @include('customer.include.header.parallax')
+    <img class="img-responsive" src="{{ asset('customer_assets/img/1920x1080/rent.jpg') }}" alt="Slider Image">
+    <div class="container">
+        <div class="carousel-centered">
+            <div class="margin-b-40">
+                <h3 class="carousel-title">Catalog</h3>
+                <p>WS HME menyediakan penyewaan barang-barang elektronik untuk keperluan penyelenggaraan acara.<br>
+                     Pesan sekarang juga melalui website ini.</p>
+            </div>
+            <a href="{{ route('rent') }}" class="btn-theme btn-theme-sm btn-white-brd text-uppercase">Rent</a>
+        </div>
+    </div>
 
     <!--========== PAGE LAYOUT ==========-->
     <!-- Our Exceptional Solutions -->
@@ -24,7 +34,6 @@
             <!-- Our Exceptional Solutions -->
             @include('customer.include.inventory')
             <!-- End Our Exceptional Solutions -->
-
             <!-- Our Exceptional Solutions -->
             <div class="col-sm-4 sm-margin-b-50">
                 <div class="margin-b-20">
