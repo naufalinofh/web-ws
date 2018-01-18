@@ -2,7 +2,7 @@
 
         @include('customer.include.header.navbar',
                  ['home_is_active'      => '',
-                  'portfolio_is_active' => '',
+                  'projects_is_active' => '',
                   'catalog_is_active'   => '',
                   'rent_is_active'      => 'active',
                   'about_is_active'     => ''])
