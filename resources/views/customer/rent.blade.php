@@ -216,7 +216,7 @@
                 var rent_hour = $('#rent_hour');
                 var return_date = $('#return_date');
                 var return_hour = $('#return_hour');
-                var master_form = $('#form_master');
+                var form_master = $('#form_master');
                 var available_inventory = $('#available_inventory');
 
                 rent_date.change(checkIfAllFilled);
@@ -224,7 +224,7 @@
                 return_date.change(checkIfAllFilled);
                 return_hour.change(checkIfAllFilled);
 
-                master_form.css('opacity', '0');
+                form_master.css('opacity', '0');
 
                 function checkIfAllFilled() {
                     if (rent_date.val() && rent_hour.val() && return_date.val() && return_hour.val())
@@ -232,13 +232,13 @@
                         // Get the available inventory
 
                         // Show the inventory
-                        master_form.css('opacity', '0');
+                        form_master.css('opacity', '0');
 
-                        available_inventory.load("{{ asset('customer_assets/script/load_inventory.php') }}", function() {
-                            alert("succes");
+                        $.get('load_available_inventory', function(data) {
+                            available_inventory.innerHTML = "<p>abi</p>";
                         });
 
-                        master_form.animate({opacity: 1});
+                        form_master.animate({opacity: 1});
                     }
                 }
 

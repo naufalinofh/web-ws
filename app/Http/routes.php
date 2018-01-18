@@ -69,6 +69,13 @@ Route::get('/admin_dashboard', function () {
     return view('admin/dashboard', $data);
 })->name('admin_dashboard');
 
+Route::get('/load_available_inventory', function () {
+    if(Request::ajax()) {
+        $data = \App\Inventory::all();
+        return $data;
+    }
+});
+
 
 /*
 |--------------------------------------------------------------------------
