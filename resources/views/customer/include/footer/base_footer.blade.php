@@ -19,9 +19,11 @@
                     <!-- List -->
                     <ul class="list-unstyled footer-list">
                         <li class="footer-list-item"><a class="footer-list-link" href="http://line.me/ti/p/%40pao0271y">Line</a></li>
+                        <!--
                         <li class="footer-list-item"><a class="footer-list-link" href="#">Facebook</a></li>
                         <li class="footer-list-item"><a class="footer-list-link" href="#">Instagram</a></li>
                         <li class="footer-list-item"><a class="footer-list-link" href="#">YouTube</a></li>
+                        -->
                     </ul>
                     <!-- End List -->
                 </div>

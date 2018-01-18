@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\CharacterController;
 use App\Inventory;
 use App\RentPrice;
-
 
 class CatalogController extends Controller
 {
@@ -24,10 +24,26 @@ class CatalogController extends Controller
         return $s;
     }
 
+    public function showRentPrice($id)
+    {
+        //return strng without space, and change space into underscores
+        $rent_prices = RentPrice::where('inventory_id',$id)->get();
+        $s="";
+        foreach($rent_prices as $price)
+        {
+            if ($price->price_per_3hour != 0)
+            {
+                $s =    "Harga per 3 jam : Rp. ".number_format($price->price_per_3hour,0,',','.');
+            }
+            $s= $s."<br> Harga per hari  : Rp. ".number_format($price->price_per_day,0,',','.');
+        }
+        
+        return '<p>'.$s.'</p>';
+    }
+
      public function index()
     {
         $inventories = Inventory::all();
-        $
         $data = [
             'title' => 'Catalog',
             'inventories' => $inventories

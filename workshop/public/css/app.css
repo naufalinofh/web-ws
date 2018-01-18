@@ -1448,12 +1448,6 @@ img {
   height: auto;
 }
 
-.img-catalog {
-  display: block;
-  width: 200px;
-  height: auto;
-}
-
 .img-rounded {
   border-radius: 6px;
 }
