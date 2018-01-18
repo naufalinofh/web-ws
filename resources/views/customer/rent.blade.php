@@ -20,12 +20,12 @@
 
                 <br><br>
 
-                <form>
+                <form action="{{ url('') }}">
 
                     <div>
                         <div class="form form-group col col-sm-3">
                             <div class="form-group">
-                                <label class="custom-form-text" for="date">Tanggal Pinjam:</label>
+                                <label class="custom-form-text" for="rent_date">Tanggal Pinjam:</label>
                                 <input class="form-control custom-form-date" id="rent_date" name="rent_date" type="date" >
 
                             </div>
@@ -33,7 +33,7 @@
 
                         <div class="form form-group col col-sm-3">
                             <div class="form-group">
-                                <label class="custom-form-text" for="date">Jam Pinjam:</label>
+                                <label class="custom-form-text" for="rent_hour">Jam Pinjam:</label>
                                 <input class="form-control custom-form-date" id="rent_hour" name="rent_hour" type="time" >
 
                             </div>
@@ -41,7 +41,7 @@
 
                         <div class="form form-group col col-sm-3">
                             <div class="form-group">
-                                <label class="custom-form-text" for="date">Tanggal Kembali:</label>
+                                <label class="custom-form-text" for="return_date">Tanggal Kembali:</label>
                                 <input class="form-control custom-form-date" id="return_date" name="return_date" type="date" >
 
                             </div>
@@ -49,7 +49,7 @@
 
                         <div class="form form-group col col-sm-3">
                             <div class="form-group">
-                                <label class="custom-form-text" for="date">Jam Kembali:</label>
+                                <label class="custom-form-text" for="return_hour">Jam Kembali:</label>
                                 <input class="form-control custom-form-date" id="return_hour" name="return_hour" type="time" >
 
                             </div>
@@ -181,17 +181,17 @@
                             <div class="form form-group col col-sm-12">
                                 <div class="form-group">
                                     <label class="custom-form-text" for="name">Name:</label>
-                                    <input type="text" class="form-control custom-form-border" id="name" placeholder="ex: Nyoman Abiwinanda">
+                                    <input name="customer_name" type="text" class="form-control custom-form-border" id="name" placeholder="ex: Nyoman Abiwinanda">
                                 </div>
                                 <div class="form-group">
                                     <label class="custom-form-text" for="nim">NIM:</label>
-                                    <input type="number" class="form-control custom-form-border" id="nim" placeholder="ex: 13214096">
+                                    <input name="customer_nim" type="number" class="form-control custom-form-border" id="nim" placeholder="ex: 13214096">
                                 </div>
                                 <div class="form-group">
                                     <label class="custom-form-text" for="institution">Institution:</label>
-                                    <input type="text" class="form-control custom-form-border" id="institution" placeholder="ex: URO">
+                                    <input name="customer_institution" type="text" class="form-control custom-form-border" id="institution" placeholder="ex: URO">
                                 </div>
-                                <button type="submit" class="btn btn-default">Pinjam</button>
+                                <button name="rent_btn" type="submit" class="btn btn-default">Pinjam</button>
                             </div>
                         </div>
                     </div>
@@ -203,8 +203,6 @@
         <!-- End Service -->
 
         <!--========== END PAGE LAYOUT ==========-->
-
-
 
         @include('customer.include.footer.base_footer')
 
@@ -224,25 +222,29 @@
                 return_date.change(checkIfAllFilled);
                 return_hour.change(checkIfAllFilled);
 
-                form_master.css('opacity', '0');
+                form_master.css('display', 'none');
 
                 function checkIfAllFilled() {
                     if (rent_date.val() && rent_hour.val() && return_date.val() && return_hour.val())
                     {
-                        // Get the available inventory
-
                         // Show the inventory
+                        form_master.css('display', 'block');
                         form_master.css('opacity', '0');
 
                         $.get('load_available_inventory', function(data) {
-                            available_inventory.innerHTML = "<p>abi</p>";
+
+                            var available_inventory_html = data;
+
+                            // Empty the html
+                            available_inventory.empty();
+
+                            // Fill the html
+                            available_inventory.append(available_inventory_html);
                         });
 
                         form_master.animate({opacity: 1});
                     }
                 }
-
-
 
             });
         </script>
