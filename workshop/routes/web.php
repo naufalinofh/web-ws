@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function(){
-    return view('admin_template');
+    return view('admin.admin_template');
 });
 
 Route::get('/coba', 'Test@connect');
