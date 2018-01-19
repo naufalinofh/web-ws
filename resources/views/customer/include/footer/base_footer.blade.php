@@ -19,9 +19,11 @@
                     <!-- List -->
                     <ul class="list-unstyled footer-list">
                         <li class="footer-list-item"><a class="footer-list-link" href="http://line.me/ti/p/%40pao0271y">Line</a></li>
+                        <!--
                         <li class="footer-list-item"><a class="footer-list-link" href="#">Facebook</a></li>
                         <li class="footer-list-item"><a class="footer-list-link" href="#">Instagram</a></li>
                         <li class="footer-list-item"><a class="footer-list-link" href="#">YouTube</a></li>
+                        -->
                     </ul>
                     <!-- End List -->
                 </div>
@@ -47,7 +49,7 @@
                 <img class="footer-logo" style="max-height: 50px; width: auto;" src="{{ asset('customer_assets/img/logo_ws.png') }}" alt="WS logo">
             </div>
             <div class="col-xs-6 text-right">
-                <p class="margin-b-0">Created by: WS HME with Divkom HME<br> 
+                <p class="margin-b-0">Created by: WS HME & Divkom HME<br> 
                     Powered by: <a class="color-base fweight-700" href="http://www.keenthemes.com/">KeenThemes</a></p>
             </div>
         </div>

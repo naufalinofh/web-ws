@@ -1143,3 +1143,6 @@ fieldset[disabled] .btn-theme {
 .height-300 {
   height: 300px !important;
 }
+.height-500 {
+  height: 500px !important;
+}
