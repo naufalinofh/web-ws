@@ -10,7 +10,7 @@
                         <li class="footer-list-item"><a class="footer-list-link" href="#">Home</a></li>
                         <li class="footer-list-item"><a class="footer-list-link" href="{{ route('projects') }}">Projects</a></li>
                         <li class="footer-list-item"><a class="footer-list-link" href="{{ route('catalog') }}">Catalog</a></li>
-                        <li class="footer-list-item"><a class="footer-list-link" href="{{ route('rent') }}">Rent</a></li>
+                        <li class="footer-list-item"><a class="footer-list-link" href="{{ route('rent.index') }}">Rent</a></li>
                         <li class="footer-list-item"><a class="footer-list-link" href="{{ route('about') }}">About Us</a></li>
                     </ul>
                     <!-- End List -->

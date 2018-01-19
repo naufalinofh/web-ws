@@ -20,7 +20,9 @@
 
                 <br><br>
 
-                <form action="{{ url('') }}">
+                <form method="post" action="{{ route('rent.store') }}">
+
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                     <div>
                         <div class="form form-group col col-sm-3">
@@ -188,8 +190,16 @@
                                     <input name="customer_nim" type="number" class="form-control custom-form-border" id="nim" placeholder="ex: 13214096">
                                 </div>
                                 <div class="form-group">
-                                    <label class="custom-form-text" for="institution">Institution:</label>
-                                    <input name="customer_institution" type="text" class="form-control custom-form-border" id="institution" placeholder="ex: URO">
+                                    <label class="custom-form-text" for="organization">Organisasi:</label>
+                                    <input name="customer_organization" type="text" class="form-control custom-form-border" id="organization" placeholder="ex: URO">
+                                </div>
+                                <div class="form-group">
+                                    <label class="custom-form-text" for="email">Email:</label>
+                                    <input name="customer_email" type="email" class="form-control custom-form-border" id="email" placeholder="ex: abiwinanda@outlook.com">
+                                </div>
+                                <div class="form-group">
+                                    <label class="custom-form-text" for="tlp">No Telepon:</label>
+                                    <input name="customer_tlp" type="text" class="form-control custom-form-border" id="tlp" placeholder="ex: 081223405967">
                                 </div>
                                 <button name="rent_btn" type="submit" class="btn btn-default">Pinjam</button>
                             </div>
