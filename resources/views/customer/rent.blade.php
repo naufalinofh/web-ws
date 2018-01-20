@@ -144,20 +144,43 @@
                 function checkIfAllFilled() {
                     if (rent_date.val() && rent_hour.val() && return_date.val() && return_hour.val())
                     {
+                        var pickup_time = rent_date.val() + " " + rent_hour.val();
+                        var return_time = return_date.val() + " " + return_hour.val();
+
                         // Show the inventory
                         form_master.css('display', 'block');
                         form_master.css('opacity', '0');
 
-                        $.get('load_available_inventory', function(data) {
+                        $.ajax({
+                            url: "load_available_inventory",
+                            type: "get",
+                            data: {
+                                pt: pickup_time,
+                                rt: return_time
+                            },
+                            success: function(data) {
 
-                            var available_inventory_html = data;
+                                var available_inventory_html = data;
 
-                            // Empty the html
-                            available_inventory.empty();
+                                // Empty the html
+                                available_inventory.empty();
 
-                            // Fill the html
-                            available_inventory.append(available_inventory_html);
+                                // Fill the html
+                                available_inventory.append(available_inventory_html);
+
+                            }
                         });
+
+                        // $.get('load_available_inventory', function(data) {
+                        //
+                        //     var available_inventory_html = data;
+                        //
+                        //     // Empty the html
+                        //     available_inventory.empty();
+                        //
+                        //     // Fill the html
+                        //     available_inventory.append(available_inventory_html);
+                        // });
 
                         form_master.animate({opacity: 1});
                     }

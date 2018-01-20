@@ -59,7 +59,7 @@ Route::get('/admin_dashboard', function () {
 
 
 Route::get('/test', function() {
-    $data = \App\Inventory::all();
+    $data = \App\Inventory::getAvailableInventory();
 
     return $data;
 
@@ -67,14 +67,17 @@ Route::get('/test', function() {
 
 Route::get('/load_available_inventory', function () {
     if(Request::ajax()) {
-        $data = \App\Inventory::getAvailableInventory();
+
+        $pickup_time = $_GET['pt'];
+        $return_time = $_GET['rt'];
+
+        $data = \App\Inventory::getAvailableInventory($pickup_time, $return_time);
 
         // Initialize the html
         $html = '';
         $temp = 0;
 
         foreach ($data['qty_av'] as $single) {
-
 
             $available_html = '';
 

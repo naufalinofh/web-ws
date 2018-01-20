@@ -21,15 +21,13 @@ class Inventory extends Model
         return $this->belongsToMany('App\Category');
     }
 
-    public static function getAvailableInventory()
+    public static function getAvailableInventory($pickup_time, $return_time)
     {
         $inventories = Inventory::all();
 
-        $pickup_time = date_create('2018-01-20 09:00:00'); //get Post
-        $return_time = date_create('2018-01-21 10:00:00'); //get Post
-        $logs = Log::with('Good')->where([['pickup_time', '<=', $return_time],
-            ['prom_return_time', '>=', $pickup_time]])
-            ->get();
+        $pickup_time = date_create($pickup_time); //get Post
+        $return_time = date_create($return_time); //get Post
+        $logs = Log::with('Good')->where([['pickup_time', '<=', $return_time], ['prom_return_time', '>=', $pickup_time]])->get();
 
         foreach($inventories as $inventory)
         {

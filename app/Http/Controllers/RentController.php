@@ -53,7 +53,6 @@ class RentController extends Controller
         $organization = new Organization();
         $customer_organization = new CustomerOrganization();
         $log = new Log();
-        $good = new Good();
 
         // Status variable
         $customerDidNotExist = false;
@@ -106,6 +105,7 @@ class RentController extends Controller
             $input_name = str_replace(' ', '_', $single->name)."_Qty";
 
             if ($request->input( $input_name ) != 0) {
+                $good = new Good();
                 $good->inventory_id = $single->id;
                 $good->log_id = $log_id;
                 $good->qty = $request->input( $input_name );
