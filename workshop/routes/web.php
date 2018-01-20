@@ -11,8 +11,6 @@
 |
 */
 
-Route::get('/', function(){
-    return view('admin.admin_template');
-});
+Route::get('/', 'Test@tester');
 
 Route::get('/coba', 'Test@connect');

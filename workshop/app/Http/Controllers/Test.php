@@ -14,10 +14,40 @@ use App\RentPrice;
 
 class Test extends Controller
 {
+    var $data = [
+        'nama_orang' => 'M Salman Galileo',
+        'header' => ['main' => 'Pickup', 'sub' => 'Halaman untuk pengambilan barang'],
+        'sidebar' => [
+            [
+                'state' => 'active',
+                'link' => '#1',
+                'fa' => 'fa fa-hand-paper-o',
+                'text' => 'Pickup'
+            ],
+            [
+                'state' => '',
+                'link' => '#2',
+                'fa' => 'fa fa-handshake-o',
+                'text' => 'Return'
+            ],
+            [
+                'state' => '',
+                'link' => '#3',
+                'fa' => 'fa fa-list-alt',
+                'text' => 'Log'
+            ],
+            [
+                'state' => '',
+                'link' => '#4',
+                'fa' => 'fa fa-question-circle',
+                'text' => 'Help'
+            ],
+        ],
+    ];
+
     public function tester()
     {
-        $inventories = Customer::with('organizations')->get();
-        return dump($inventories);
+        return view('pickup', $this->data);
     }
 
     public function connect()
