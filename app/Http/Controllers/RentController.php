@@ -8,6 +8,8 @@ use App\Http\Requests;
 use App\Inventory;
 use App\Customer;
 use App\Organization;
+use App\CustomerOrganization;
+use App\Log;
 
 
 class RentController extends Controller
@@ -44,10 +46,18 @@ class RentController extends Controller
      */
     public function store(Request $request)
     {
+        $customer = new Customer();
+        $organization = new Organization();
+        $customer_organization = new CustomerOrganization();
+        $log = new Log();
+
+        // Status variable
+        $customerDidNotExist = false;
+        $organizationDidNotExist = false;
+
         // Check if customer is already exist or not
         if (Customer::where('nim', '=', $request->input('customer_nim'))->first() == null) {
             // Create new customer
-            $customer = new Customer();
             $customer->name = $request->input('customer_name');
             $customer->nim = $request->input('customer_nim');
             $customer->email = $request->input('customer_email');
@@ -55,17 +65,36 @@ class RentController extends Controller
             $customer->penalty = 0;
             $customer->save();
 
-            return 'Customer doesn\'t exist. created a new one';
+            $customerDidNotExist = true;
         }
 
         // Check if organization already exist or not
-//        if(Organization::where('organization', '=', $request->input('customer_organization')) == null) {
-//
-//        }
+        if(Organization::where('name', '=', strtolower($request->input('customer_organization')))->first() == null) {
+            // Create new organization
+            $organization->name = strtolower($request->input('customer_organization'));
+            $organization->save();
 
+            $organizationDidNotExist = true;
+        }
 
+        // Relate customer_id with organization_id
+        if ($customerDidNotExist || $organizationDidNotExist) {
+            $customer_temp = Customer::where('nim', '=', $request->input('customer_nim'))->first();
+            $organization_temp = Organization::where('name', '=', strtolower($request->input('customer_organization')))->first();
 
+            $customer_organization->customer_id = $customer_temp->id;
+            $customer_organization->organization_id = $organization_temp->id;
+            $customer_organization->save();
+        }
 
+        // Insert rent information into log table
+        $log->customer_id = Customer::where('nim', '=', $request->input('customer_nim'))->first()->id;
+        $log->pickup_time = $request->input('rent_date').' '.$request->input('rent_hour');
+        $log->prom_return_time = $request->input('return_date').' '.$request->input('return_hour');
+        $log->status = 'tagged';
+        $log->save();
+
+        return redirect()->action('RentController@index');
     }
 
     /**

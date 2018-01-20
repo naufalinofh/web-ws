@@ -137,5 +137,3 @@ Route::get('/forgot-password', function () {
 Route::get('/blank', function () {
     return view('admin/blank');
 })->name('blank');
-
-
