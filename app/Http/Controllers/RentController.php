@@ -10,6 +10,7 @@ use App\Customer;
 use App\Organization;
 use App\CustomerOrganization;
 use App\Log;
+use App\Good;
 
 
 class RentController extends Controller
