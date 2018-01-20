@@ -1,3 +1,7 @@
+<?php dump ($qty_av);
+    dump ($inventories);    
+?>
+
 @include('customer.include.header.base_header')
 
         @include('customer.include.header.navbar',
@@ -52,7 +56,7 @@
                         <div class="form form-group col col-sm-3">
                             <div class="form-group">
                                 <label class="custom-form-text" for="return_hour">Jam Kembali:</label>
-                                <input class="form-control custom-form-date" id="return_hour" name="return_hour" type="time" >
+                                <input class="form-control custom-form-date" id="return_hour" name="return_hour" type="time" format="HH:mm">
 
                             </div>
                         </div>
@@ -62,24 +66,35 @@
 
                     <div id="form_master">
                         <div id="available_inventory">
-                            <div class="col-sm-6 col-md-4">
-                                <div class="thumbnail">
-                                    <img src="{{ asset('customer_assets/img/inventory/Proyektor.png') }}" alt="...">
-                                    <div class="caption custom-center-inventory-title">
-                                        <h3>Proyektor</h3>
+                            @foreach($inventories as $inventory)
+                            Something1
+                                @if($qty_av[$inventory->id] > 1)
+                                Something2
+                                {{$qty_av[$inventory->id]}}
+                                    <div class="col-sm-6 col-md-4">
+                                        <div class="thumbnail">
+                                            Something
+                                            <?php $img_dir = (new \App\Http\Controllers\Controller)->unspace($inventory->name); ?>
+                                            <img class="img-catalog" style="display:block; height:100px; width:auto; margin-left:auto; margin-right:auto;" 
+                                            src="{{asset('customer_assets/img/inventory/'.$img_dir.'.png') }}" alt="">
+                                            <div class="caption custom-center-inventory-title">
+                                                <h3>{{$inventory->name}}</h3>
 
-                                        <div class="custom-right-text-align">
-                                            <select class="custom-inventory-quantity">
-                                                <option value = "0">0</option>
-                                                <option value = "1">1</option>
-                                                <option value = "2">2</option>
-                                                <option value = "3">3</option>
-                                            </select>
+                                                <div class="custom-right-text-align">
+                                                    <select class="custom-inventory-quantity">
+                                                        @for ($i = 0; $i <= $qty_av[$inventory->id]; $i++)
+                                                            <option value ="{{$i}}">{{$i}}</option>
+                                                            {{$inventory->id}}
+
+                                                        @endfor
+                                                    </select>
+                                                </div>
+
+                                            </div>
                                         </div>
-
                                     </div>
-                                </div>
-                            </div>
+                                @endif
+                            @endforeach
 
                             <div class="col-sm-6 col-md-4">
                                 <div class="thumbnail">
