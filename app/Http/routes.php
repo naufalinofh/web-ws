@@ -23,7 +23,7 @@
 
 Route::get('/', function () {
     $data = [
-        'title' => 'Welcome to Workshop HME'
+        'title' => 'WS HME'
     ];
 
     return view('customer/home', $data);
@@ -39,6 +39,14 @@ Route::get('/projects', function () {
 
 Route::get('/catalog', 'CatalogController@index')->name('catalog');
 
+/*Route::get('/rent', function () {
+    $data = [
+        'title' => 'Rent'
+    ];
+
+    return view('customer/rent', $data);
+})->name('rent');
+*/
 Route::get('/rent', 'RentController@index')->name('rent');
 
 Route::get('/about', function () {

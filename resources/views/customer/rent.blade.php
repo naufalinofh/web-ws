@@ -60,24 +60,33 @@
 
                     <div id="form_master">
                         <div id="available_inventory">
-                            <div class="col-sm-6 col-md-4">
-                                <div class="thumbnail">
-                                    <img src="{{ asset('customer_assets/img/inventory/Proyektor.png') }}" alt="...">
-                                    <div class="caption custom-center-inventory-title">
-                                        <h3>Proyektor</h3>
+                            @foreach($inventories as $inventory)
+                                @if($qty_av[$inventory->id] > 0)
+                                    <div class="col-sm-6 col-md-4">
+                                        <div class="thumbnail">
+                                            <?php $img_dir = (new \App\Http\Controllers\CharController)->unspace($inventory->name); ?>
+                                            <img class="img-catalog" style="display:block; height:200px; width:auto; margin-left:auto; margin-right:auto;" 
+                                            src="{{asset('customer_assets/img/inventory/'.$img_dir.'.png') }}" alt="">
+                                            <div class="caption custom-center-inventory-title">
+                                                <h3>{{$inventory->name}}</h3>
 
-                                        <div class="custom-right-text-align">
-                                            <select class="custom-inventory-quantity">
-                                                <option value = "0">0</option>
-                                                <option value = "1">1</option>
-                                                <option value = "2">2</option>
-                                                <option value = "3">3</option>
-                                            </select>
+                                                <div class="custom-right-text-align">
+                                                    <select class="custom-inventory-quantity">
+                                                        @for ($i = 0; $i <= $qty_av[$inventory->id]; $i++)
+                                                            <option value = {{'"'.$i.'"'}}>$i</option>
+                                                        @endfor
+                                                        <option value = "0">0</option>
+                                                        <option value = "1">1</option>
+                                                        <option value = "2">2</option>
+                                                        <option value = "3">3</option>
+                                                    </select>
+                                                </div>
+
+                                            </div>
                                         </div>
-
                                     </div>
-                                </div>
-                            </div>
+                                @endif
+                            @endforeach
 
                             <div class="col-sm-6 col-md-4">
                                 <div class="thumbnail">

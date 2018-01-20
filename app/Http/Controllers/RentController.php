@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\CharacterController;
+use App\Http\Controllers\CharController;
 use App\Inventory;
 use App\Log;
 use App\Good;
@@ -23,34 +23,31 @@ class RentController extends Controller
     public function index()
     {
         $inventories = Inventory::all();
+        
+        $pickup_time = date_create('2018-01-20 09:00:00'); //get Post
+        $return_time = date_create('2018-01-21 10:00:00'); //get Post        
+        $logs = Log::with('Good')->where([['pickup_time', '<=', $return_time],
+                           ['prom_return_time', '>=', $pickup_time]])
+                           ->get();
+
         foreach($inventories as $inventory)
         {
             $qty_av[$inventory->id]= $inventory->quantity_ready;
         }
-            $id = $inventory->id;
-            $quantity = $inventory->quantity_ready;
-            $pickup_time = date_create('2018-01-20 09:00:00');
-            $return_time = date_create('2018-01-21 10:00:00');        
-            $logs = Log::with('Good')->where([['pickup_time', '<=', $return_time],
-                           ['prom_return_time', '>=', $pickup_time]])
-                           ->whereHas('Good', function($query) use ($id){
-                               $query->where('inventory_id','=',$id);
-                           })->get();  
-            
-            foreach($logs as $log)
+        
+        foreach($logs as $log)
+        {
+            foreach($log->good as $stuff)
             {
-                $goods = Good::where([['log_id',$log->id],
-                                    ['inventory_id',$id]])
-                                    ->get();
-                foreach($goods as $good)
-                {
-                    
-                }
+                $qty_av[$stuff->inventory_id] -= $stuff->qty;
             }
+        }
             //if $quantity<=0, hide, else show with max number $quantity
             //echo $id.'with'.$quantity.'<br>' ;                          
         $data = [
-            'title' => 'Rental'
+            'title' => 'Rental',
+            'inventories'=>$inventories,
+            'qty_av' => $qty_av
         ];
       
         return view('customer/rent', $data);
