@@ -33,3 +33,7 @@
 .custom-form-date {
     border: 1px #000 solid !important;
 }
+
+.custom-inventory-img {
+    height: 10px !important;
+}

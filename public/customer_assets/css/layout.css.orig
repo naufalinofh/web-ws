@@ -983,10 +983,7 @@ fieldset[disabled] .btn-theme {
 
 .carousel-caption {
   color: #fff;
-<<<<<<< HEAD
-=======
   text-transform: uppercase;
->>>>>>> 0b3900d1e15d405e88ed1e6298947b17f8572b35
 }
 @media (max-width: 768px) {
   .carousel-title {

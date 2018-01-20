@@ -19,12 +19,20 @@ use App\Good;
             $return_time = date_create('2018-01-21 10:00:00');        
             $logs = Log::with('Good')->where([['pickup_time', '<=', $return_time],
                            ['prom_return_time', '>=', $pickup_time]])
-                           ->get();
-            echo $logs;    
-            //foreach($logs as $log)
+                           ->whereHas('Good', function($query) use ($id){
+                               $query->where('inventory_id','=',$id);
+                           })->get();  
+            
+            foreach($logs as $log)
             {
-              //$quantity -= $log->goods->qty;
-           }
+                $goods = Good::where([['log_id',$log->id],
+                                    ['inventory_id',$id]])
+                                    ->get();
+                foreach($goods as $good)
+                {
+                    
+                }
+            }
             //if $quantity<=0, hide, else show with max number $quantity
             //echo $id.'with'.$quantity.'<br>' ;                          
         }

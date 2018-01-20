@@ -39,7 +39,13 @@ Route::get('/projects', function () {
 
 Route::get('/catalog', 'CatalogController@index')->name('catalog');
 
-Route::get('/rent', 'RentController@index')->name('rent');
+Route::get('/rent', function () {
+    $data = [
+      'title' => 'Rental'
+    ];
+
+    return view('customer/hapus', $data);
+})->name('rent');
 
 Route::get('/about', function () {
     $data = [
