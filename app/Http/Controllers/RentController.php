@@ -12,8 +12,6 @@ use App\Inventory;
 use App\Customer;
 use App\Organization;
 use App\CustomerOrganization;
-use App\Log;
-use App\Good;
 
 
 class RentController extends Controller
@@ -25,38 +23,6 @@ class RentController extends Controller
      */
 
     public function index()
-    {
-        $inventories = Inventory::all();
-        
-        $pickup_time = date_create('2018-01-20 09:00:00'); //get Post
-        $return_time = date_create('2018-01-21 10:00:00'); //get Post        
-        $logs = Log::with('Good')->where([['pickup_time', '<=', $return_time],
-                           ['prom_return_time', '>=', $pickup_time]])
-                           ->get();
-
-        foreach($inventories as $inventory)
-        {
-            $qty_av[$inventory->id]= $inventory->quantity_ready;
-        }
-        
-        foreach($logs as $log)
-        {
-            foreach($log->good as $stuff)
-            {
-                $qty_av[$stuff->inventory_id] -= $stuff->qty;
-            }
-        }
-            //if $quantity<=0, hide, else show with max number $quantity
-            //echo $id.'with'.$quantity.'<br>' ;                          
-        $data = [
-            'title' => 'Rental',
-            'inventories'=>$inventories,
-            'qty_av' => $qty_av
-        ];
-
-        return view('customer/rent', $data);
-    } 
-    public function index_abi()
     {
         $data = [
             'title' => 'Rental'
@@ -87,6 +53,7 @@ class RentController extends Controller
         $organization = new Organization();
         $customer_organization = new CustomerOrganization();
         $log = new Log();
+        $good = new Good();
 
         // Status variable
         $customerDidNotExist = false;
@@ -131,10 +98,25 @@ class RentController extends Controller
         $log->status = 'tagged';
         $log->save();
 
+        // Insert inventories information into good table. First get the log id
+        $log_id = $log->orderBy('created_at', 'decs')->first()->id;
+
+        // Brute force each inventories in the inventories table
+        foreach (Inventory::all() as $single) {
+            $input_name = str_replace(' ', '_', $single->name)."_Qty";
+
+            if ($request->input( $input_name ) != 0) {
+                $good->inventory_id = $single->id;
+                $good->log_id = $log_id;
+                $good->qty = $request->input( $input_name );
+                $good->save();
+            }
+        }
+
         return redirect()->action('RentController@index');
     }
 
-    /**
+    /**git
      * Display the specified resource.
      *
      * @param  int  $id

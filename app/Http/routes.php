@@ -57,35 +57,48 @@ Route::get('/admin_dashboard', function () {
     return view('admin/dashboard', $data);
 })->name('admin_dashboard');
 
+
+Route::get('/test', function() {
+    $data = \App\Inventory::all();
+
+    return $data;
+
+});
+
 Route::get('/load_available_inventory', function () {
     if(Request::ajax()) {
-        $data = \App\Inventory::all();
+        $data = \App\Inventory::getAvailableInventory();
 
         // Initialize the html
         $html = '';
+        $temp = 0;
 
-        foreach ($data as $single) {
+        foreach ($data['qty_av'] as $single) {
+
+
             $available_html = '';
 
             // get the number of available inventory
-            for ($i = 0; $i <= $single->quantity_ready; $i++) {
+            for ($i = 0; $i <= $single; $i++) {
                 $available_html .= '<option value = "'.$i.'">'.$i.'</option>';
             }
 
             $html .= '<div class="col-xs-12 col-sm-4 col-md-3">
                         <div class="thumbnail">
-                            <img style="width: 400px; height: 300px;" src="'.asset('customer_assets/img/inventory/'.str_replace(' ', '_', $single->name).'.png').'" alt="...">
+                            <img style="width: 400px; height: 300px;" src="'.asset('customer_assets/img/inventory/'.str_replace(' ', '_', $data['inventories'][$temp]->name).'.png').'" alt="...">
                             <div class="caption custom-center-inventory-title">
-                                <h3>'.$single->name.'</h3>
+                                <h3>'.$data['inventories'][$temp]->name.'</h3>
 
                                 <div class="custom-right-text-align">
-                                    <select name="'.str_replace(' ', '_', $single->name).'_Qty" class="custom-inventory-quantity">'.
+                                    <select name="'.str_replace(' ', '_', $data['inventories'][$temp]->name).'_Qty" class="custom-inventory-quantity">'.
                                     $available_html
                                     .'</select>
                                 </div>
                             </div>
                         </div>
                      </div>';
+
+            $temp++;
         }
 
         return $html;
