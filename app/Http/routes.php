@@ -39,15 +39,7 @@ Route::get('/projects', function () {
 
 Route::get('/catalog', 'CatalogController@index')->name('catalog');
 
-/*Route::get('/rent', function () {
-    $data = [
-        'title' => 'Rent'
-    ];
-
-    return view('customer/rent', $data);
-})->name('rent');
-*/
-Route::get('/rent', 'RentController@index')->name('rent');
+Route::resource('rent', 'RentController');
 
 Route::get('/about', function () {
     $data = [
@@ -80,7 +72,7 @@ Route::get('/load_available_inventory', function () {
                 $available_html .= '<option value = "'.$i.'">'.$i.'</option>';
             }
 
-            $html .= '<div class="col-sm-6 col-md-4">
+            $html .= '<div class="col-xs-12 col-sm-4 col-md-3">
                         <div class="thumbnail">
                             <img style="width: 400px; height: 300px;" src="'.asset('customer_assets/img/inventory/'.str_replace(' ', '_', $single->name).'.png').'" alt="...">
                             <div class="caption custom-center-inventory-title">
@@ -99,7 +91,6 @@ Route::get('/load_available_inventory', function () {
         return $html;
     }
 });
-
 
 /*
 |--------------------------------------------------------------------------

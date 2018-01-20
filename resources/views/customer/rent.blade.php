@@ -1,3 +1,7 @@
+<?php dump ($qty_av);
+    dump ($inventories);    
+?>
+
 @include('customer.include.header.base_header')
 
         @include('customer.include.header.navbar',
@@ -20,7 +24,9 @@
 
                 <br><br>
 
-                <form action="{{ url('') }}">
+                <form method="post" action="{{ route('rent.store') }}">
+
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                     <div>
                         <div class="form form-group col col-sm-3">
@@ -61,11 +67,15 @@
                     <div id="form_master">
                         <div id="available_inventory">
                             @foreach($inventories as $inventory)
-                                @if($qty_av[$inventory->id] > 0)
+                            Something1
+                                @if($qty_av[$inventory->id] > 1)
+                                Something2
+                                {{$qty_av[$inventory->id]}}
                                     <div class="col-sm-6 col-md-4">
                                         <div class="thumbnail">
-                                            <?php $img_dir = (new \App\Http\Controllers\CharController)->unspace($inventory->name); ?>
-                                            <img class="img-catalog" style="display:block; height:200px; width:auto; margin-left:auto; margin-right:auto;" 
+                                            Something
+                                            <?php $img_dir = (new \App\Http\Controllers\Controller)->unspace($inventory->name); ?>
+                                            <img class="img-catalog" style="display:block; height:100px; width:auto; margin-left:auto; margin-right:auto;" 
                                             src="{{asset('customer_assets/img/inventory/'.$img_dir.'.png') }}" alt="">
                                             <div class="caption custom-center-inventory-title">
                                                 <h3>{{$inventory->name}}</h3>
@@ -73,12 +83,10 @@
                                                 <div class="custom-right-text-align">
                                                     <select class="custom-inventory-quantity">
                                                         @for ($i = 0; $i <= $qty_av[$inventory->id]; $i++)
-                                                            <option value = {{'"'.$i.'"'}}>$i</option>
+                                                            <option value ="{{$i}}">{{$i}}</option>
+                                                            {{$inventory->id}}
+
                                                         @endfor
-                                                        <option value = "0">0</option>
-                                                        <option value = "1">1</option>
-                                                        <option value = "2">2</option>
-                                                        <option value = "3">3</option>
                                                     </select>
                                                 </div>
 
@@ -197,8 +205,16 @@
                                     <input name="customer_nim" type="number" class="form-control custom-form-border" id="nim" placeholder="ex: 13214096">
                                 </div>
                                 <div class="form-group">
-                                    <label class="custom-form-text" for="institution">Institution:</label>
-                                    <input name="customer_institution" type="text" class="form-control custom-form-border" id="institution" placeholder="ex: URO">
+                                    <label class="custom-form-text" for="organization">Organisasi:</label>
+                                    <input name="customer_organization" type="text" class="form-control custom-form-border" id="organization" placeholder="ex: URO">
+                                </div>
+                                <div class="form-group">
+                                    <label class="custom-form-text" for="email">Email:</label>
+                                    <input name="customer_email" type="email" class="form-control custom-form-border" id="email" placeholder="ex: abiwinanda@outlook.com">
+                                </div>
+                                <div class="form-group">
+                                    <label class="custom-form-text" for="tlp">No Telepon:</label>
+                                    <input name="customer_tlp" type="text" class="form-control custom-form-border" id="tlp" placeholder="ex: 081223405967">
                                 </div>
                                 <button name="rent_btn" type="submit" class="btn btn-default">Pinjam</button>
                             </div>

@@ -6,10 +6,12 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\CharController;
-use App\Inventory;
 use App\Log;
 use App\Good;
+use App\Inventory;
+use App\Customer;
+use App\Organization;
+
 
 class RentController extends Controller
 {
@@ -18,7 +20,6 @@ class RentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
 
     public function index()
     {
@@ -49,7 +50,15 @@ class RentController extends Controller
             'inventories'=>$inventories,
             'qty_av' => $qty_av
         ];
-      
+
+        return view('customer/rent', $data);
+    } 
+    public function index_abi()
+    {
+        $data = [
+            'title' => 'Rental'
+        ];
+
         return view('customer/rent', $data);
     }
 
@@ -71,7 +80,28 @@ class RentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Check if customer is already exist or not
+        if (Customer::where('nim', '=', $request->input('customer_nim'))->first() == null) {
+            // Create new customer
+            $customer = new Customer();
+            $customer->name = $request->input('customer_name');
+            $customer->nim = $request->input('customer_nim');
+            $customer->email = $request->input('customer_email');
+            $customer->no_tlp = $request->input('customer_tlp');
+            $customer->penalty = 0;
+            $customer->save();
+
+            return 'Customer doesn\'t exist. created a new one';
+        }
+
+        // Check if organization already exist or not
+//        if(Organization::where('organization', '=', $request->input('customer_organization')) == null) {
+//
+//        }
+
+
+
+
     }
 
     /**
@@ -82,6 +112,7 @@ class RentController extends Controller
      */
     public function show($id)
     {
+        //
     }
 
     /**

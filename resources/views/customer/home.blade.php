@@ -41,7 +41,7 @@
                                 <p>WS HME menyediakan penyewaan barang-barang elektronik untuk keperluan penyelenggaraan acara.<br>
                                      Pesan sekarang juga melalui website ini.</p>
                             </div>
-                            <a href="{{ route('rent') }}" class="btn-theme btn-theme-sm btn-white-brd text-uppercase">Rent</a>
+                            <a href="{{ route('rent.index') }}" class="btn-theme btn-theme-sm btn-white-brd text-uppercase">Rent</a>
                         </div>
                     </div>
                 </div>

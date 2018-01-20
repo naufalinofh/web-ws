@@ -4,7 +4,7 @@
         <div class="col-sm-6 col-md-4 sm-margin-b-20">
             <div class="thumbnail height-500">
                 <div class="wow zoomIn" data-wow-duration=".3" data-wow-delay=".1s">
-                    <?php $img_dir = (new \App\Http\Controllers\CharController)->unspace($inventory->name); ?>
+                    <?php $img_dir = (new \App\Http\Controllers\Controller)->unspace($inventory->name); ?>
                     <img class="img-catalog" style="display:block; height:200px; width:auto; margin-left:auto; margin-right:auto;" 
                     src="{{asset('customer_assets/img/inventory/'.$img_dir.'.png') }}" alt="">
                 </div>
