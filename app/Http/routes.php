@@ -59,9 +59,33 @@ Route::get('/admin_dashboard', function () {
 
 
 Route::get('/test', function() {
-    $data = \App\Inventory::getAvailableInventory();
+//    $data = \App\Inventory::all();
+//
+//    foreach ($data as $single) {
+//        echo $single->price[0]->price_per_day;
+//        echo '<br>';
+//    }
 
-    return $data;
+//    return \App\Inventory::find(1)->price[0]->price_per_day;
+
+//    $date1 = strtotime('2018-01-21');
+//    $date1 = date('Y-m-d', $date1);
+//
+//    $date2 = strtotime('2018-01-22');
+//    $date2 = date('Y-m-d', $date2);
+//
+//    $date3 = $date2 - $date1;
+
+    // $datetime1 = date_create('2009-10-14 16:00');
+    // $datetime2 = date_create('2009-10-15 17:00');
+    // $interval = date_diff($datetime1, $datetime2);
+
+    // $num = (int) $interval->format('%h');
+    // echo $num;
+
+    // $num = (int) date_diff(date_create('2009-10-14 16:00'), date_create('2009-10-15 17:00'))->format('%a');
+
+    echo (int) date_diff(date_create('2009-10-14 16:00'), date_create('2009-10-16 17:00'))->format('%a');
 
 });
 
@@ -81,28 +105,123 @@ Route::get('/load_available_inventory', function () {
 
             $available_html = '';
 
-            // get the number of available inventory
-            for ($i = 0; $i <= $single; $i++) {
-                $available_html .= '<option value = "'.$i.'">'.$i.'</option>';
-            }
+           if ($single != 0) {
+               // get the number of available inventory
+               for ($i = 0; $i <= $single; $i++) {
+                   $available_html .= '<option value = "'.$i.'">'.$i.'</option>';
+               }
 
-            $html .= '<div class="col-xs-12 col-sm-4 col-md-3">
+               $html .= '<div class="col-xs-12 col-sm-4 col-md-3">
                         <div class="thumbnail">
                             <img style="width: 400px; height: 300px;" src="'.asset('customer_assets/img/inventory/'.str_replace(' ', '_', $data['inventories'][$temp]->name).'.png').'" alt="...">
                             <div class="caption custom-center-inventory-title">
                                 <h3>'.$data['inventories'][$temp]->name.'</h3>
 
                                 <div class="custom-right-text-align">
-                                    <select name="'.str_replace(' ', '_', $data['inventories'][$temp]->name).'_Qty" class="custom-inventory-quantity">'.
-                                    $available_html
-                                    .'</select>
+                                    <select id="'.str_replace(' ', '_', $data['inventories'][$temp]->name).'_Qty" name="'.str_replace(' ', '_', $data['inventories'][$temp]->name).'_Qty" class="custom-inventory-quantity">'.
+                   $available_html
+                   .'</select>
                                 </div>
                             </div>
                         </div>
                      </div>';
+           }
 
             $temp++;
         }
+
+        return $html;
+    }
+});
+
+Route::get('/show_form_info', function() {
+    if (Request::ajax()) {
+
+        // Get the ajax data
+        $name = $_GET['name'];
+        $nim = $_GET['nim'];
+        $organization = $_GET['organization'];
+        $email = $_GET['email'];
+        $no_tlp = $_GET['no_tlp'];
+        $pickup_time = $_GET['pickup_time'];
+        $return_time = $_GET['return_time'];
+        $tagged_qty = array();
+
+        // Modal rent price html
+        $tagged_html = '';
+
+        // Total price
+        $total_price = 0;
+
+        // Get the inventory quantity
+        foreach (\App\Inventory::all() as $single) {
+
+            // Get the tagged quantity of a particular inventory
+            $qty = $_GET[$single->id];
+
+            if ($qty != 0) {
+
+                if ((int) date_diff(date_create($pickup_time), date_create($return_time))->format('%a') > 0) {
+                    // Calculate the rent duration in days
+                    $rent_duration = (int) date_diff(date_create($pickup_time), date_create($return_time))->format('%a');
+
+                    // Create the tagged hmtl
+                    $tagged_html .= '<p><span class="custom-modal-field">'.$single->name.' :</span> '.$qty.' x '.$rent_duration.' hari x Rp '.$single->price[0]->price_per_day.'/hari = Rp '.$qty * $rent_duration * $single->price[0]->price_per_day.'</p>';
+
+                    // Add the inventory price to the total price
+                    $total_price += $qty * $rent_duration * $single->price[0]->price_per_day;
+                } else {
+
+                    if ($single->price[0]->price_per_3hour != 0) {
+                        // Calculate the rent duration in hours
+                        $rent_duration = (int) date_diff(date_create($pickup_time), date_create($return_time))->format('%h');
+
+                        if ($rent_duration % 3 == 0) {
+                            $rent_duration = (int) ($rent_duration / 3);
+                        } else {
+                            $rent_duration = (int) ($rent_duration / 3) + 1;
+                        }
+
+                        // Create the tagged hmtl
+                        $tagged_html .= '<p><span class="custom-modal-field">'.$single->name.' :</span> '.$qty.' x Rp '.$single->price[0]->price_per_3hour.'/3 jam = Rp '.$qty * $rent_duration * $single->price[0]->price_per_3hour.'</p>';
+
+                        // Add the inventory price to the total price
+                        $total_price += $qty * $rent_duration * $single->price[0]->price_per_3hour;
+                    } else {
+                        // Create the tagged hmtl
+                        $tagged_html .= '<p><span class="custom-modal-field">'.$single->name.' :</span> '.$qty.' x Rp '.$single->price[0]->price_per_day.' = Rp '.$qty * $rent_duration * $single->price[0]->price_per_day.'</p>';
+
+                        // Add the inventory price to the total price
+                        $total_price += $qty * $single->price[0]->price_per_day;
+                    }
+                    
+                }
+            }
+        }
+
+        $tagged_html .= '<p><span class="custom-modal-field">Total Harga : </span> Rp '.$total_price.'</p>';
+
+        // Create the modal body html
+        $html =
+            '
+                <h5>Personal Information</h5>
+                <p><span class="custom-modal-field">Nama :</span> '.$name.'</p>
+                <p><span class="custom-modal-field">NIM :</span> '.$nim.'</p>
+                <p><span class="custom-modal-field">Organisasi :</span> '.$organization.'</p>
+                <p><span class="custom-modal-field">Email :</span> '.$email.'</p>
+                <p><span class="custom-modal-field">No Telepon :</span> '.$no_tlp.'</p>
+                
+                <hr>
+                
+                <h5>Rent Duration</h5>
+                <p><span class="custom-modal-field">Pickup Time :</span> '.date_format(date_create($pickup_time), 'd M Y - H:i').'</p>
+                <p><span class="custom-modal-field">Return Time :</span> '.date_format(date_create($return_time), 'd M Y - H:i').'</p>
+                
+                <hr>
+                
+                <h5>Rent Price</h5>'.
+                $tagged_html.'
+            ';
 
         return $html;
     }

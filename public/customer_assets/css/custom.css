@@ -37,3 +37,8 @@
 .custom-inventory-img {
     height: 10px !important;
 }
+
+.custom-modal-field {
+    font-weight: bold;
+    color: darkgray;
+}
