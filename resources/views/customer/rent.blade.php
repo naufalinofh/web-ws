@@ -20,7 +20,7 @@
 
                 <br><br>
 
-                <form method="post" action="{{ route('rent.store') }}">
+                <form id="rent_form" method="post" action="{{ route('rent.store') }}">
 
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
@@ -347,6 +347,15 @@
                     });
 
                 }
+
+                // Disable submitting form via enter key
+                $('#rent_form').on('keyup keypress', function(e) {
+                    var keyCode = e.keyCode || e.which;
+                    if (keyCode === 13) { 
+                        e.preventDefault();
+                        return false;
+                    }
+                });
 
             });
         </script>
