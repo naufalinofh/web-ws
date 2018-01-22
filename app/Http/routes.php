@@ -111,11 +111,11 @@ Route::get('/load_available_inventory', function () {
                    $available_html .= '<option value = "'.$i.'">'.$i.'</option>';
                }
 
-               $html .= '<div class="col-xs-12 col-sm-4 col-md-3">
+               $html .= '<div class="col-xs-12 col-sm-6 col-md-3">
                         <div class="thumbnail">
-                            <img style="width: 400px; height: 300px;" src="'.asset('customer_assets/img/inventory/'.str_replace(' ', '_', $data['inventories'][$temp]->name).'.png').'" alt="...">
+                            <img style="width: 100px; height: 100px;" src="'.asset('customer_assets/img/inventory/'.str_replace(' ', '_', $data['inventories'][$temp]->name).'.png').'" alt="...">
                             <div class="caption custom-center-inventory-title">
-                                <h3>'.$data['inventories'][$temp]->name.'</h3>
+                                <h5>'.$data['inventories'][$temp]->name.'</h5>
 
                                 <div class="custom-right-text-align">
                                     <select id="'.str_replace(' ', '_', $data['inventories'][$temp]->name).'_Qty" name="'.str_replace(' ', '_', $data['inventories'][$temp]->name).'_Qty" class="custom-inventory-quantity">'.

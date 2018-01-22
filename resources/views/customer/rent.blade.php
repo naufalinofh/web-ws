@@ -300,6 +300,7 @@
                     var customer_pickup_time = rent_date.val() + " " + rent_hour.val();
                     var customer_return_time = return_date.val() + " " + return_hour.val();
 
+                    return "as";
                     // Get tagged quantity
                     $qty_1 = ($('#Proyektor_Qty').val() != null) ? $('#Proyektor_Qty').val() : 0;
                     $qty_2 = ($('#Layar_Proyektor_Qty').val() != null) ? $('#Layar_Proyektor_Qty').val() : 0;
