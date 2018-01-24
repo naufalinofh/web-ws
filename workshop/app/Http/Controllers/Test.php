@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Input;
 use App\Category;
 use App\Customer;
 use App\Good;
@@ -16,17 +17,16 @@ class Test extends Controller
 {
     var $data = [
         'nama_orang' => 'M Salman Galileo',
-        'header' => ['main' => 'Pickup', 'sub' => 'Halaman untuk pengambilan barang'],
         'sidebar' => [
             [
-                'state' => 'active',
-                'link' => '#1',
+                'state' => '',
+                'link' => 'pickup',
                 'fa' => 'fa fa-hand-paper-o',
                 'text' => 'Pickup'
             ],
             [
                 'state' => '',
-                'link' => '#2',
+                'link' => 'return',
                 'fa' => 'fa fa-handshake-o',
                 'text' => 'Return'
             ],
@@ -45,10 +45,98 @@ class Test extends Controller
         ],
     ];
 
-    public function tester()
+    public function tester(Request $request)
+    {  
+        return $request->all();
+    }
+
+    public function pickupBarang()
     {
+        $this->data['sidebar'][0]['state'] = 'active';
+        $this->data['header'] = ['main' => 'Pickup', 'sub' => 'Halaman untuk pengambilan barang'];
+        $pickup_log = [
+            [
+                'id' => '1',
+                'name' => 'Salman',
+                'org' => 'WS',
+                'rent' => 'proyektor 1',
+                'from' => 'kemaren',
+                'until' => 'besok',
+            ],
+            [
+                'id' => '2',
+                'name' => 'Fadel',
+                'org' => 'WS',
+                'rent' => 'proyektor 1',
+                'from' => 'kemaren',
+                'until' => 'besok',
+            ],
+            [
+                'id' => '3',
+                'name' => 'Jundi',
+                'org' => 'WS',
+                'rent' => 'proyektor 1',
+                'from' => 'kemaren',
+                'until' => 'besok',
+            ],
+            [
+                'id' => '4',
+                'name' => 'Abi',
+                'org' => 'WS',
+                'rent' => 'proyektor 1',
+                'from' => 'kemaren',
+                'until' => 'besok',
+            ],
+        ];
+        $this->data['pickup_log'] = $pickup_log;
+
         return view('pickup', $this->data);
     }
+
+    public function returnBarang()
+    {
+        $this->data['sidebar'][1]['state'] = 'active';
+        $this->data['header'] = ['main' => 'Pickup', 'sub' => 'Halaman untuk pengambilan barang'];
+        $return_log = [
+            [
+                'id' => '1',
+                'name' => 'Salman',
+                'org' => 'WS',
+                'rent' => 'proyektor 1',
+                'from' => 'kemaren',
+                'until' => 'besok',
+            ],
+            [
+                'id' => '2',
+                'name' => 'Fadel',
+                'org' => 'WS',
+                'rent' => 'proyektor 1',
+                'from' => 'kemaren',
+                'until' => 'besok',
+            ],
+            [
+                'id' => '3',
+                'name' => 'Jundi',
+                'org' => 'WS',
+                'rent' => 'proyektor 1',
+                'from' => 'kemaren',
+                'until' => 'besok',
+            ],
+            [
+                'id' => '4',
+                'name' => 'Abi',
+                'org' => 'WS',
+                'rent' => 'proyektor 1',
+                'from' => 'kemaren',
+                'until' => 'besok',
+            ],
+        ];
+        $this->data['return_log'] = $return_log;
+
+        return view('return', $this->data);
+    }
+
+
 
     public function connect()
     {
