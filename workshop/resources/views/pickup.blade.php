@@ -18,7 +18,7 @@
             </tr>
             @foreach ($pickup_log as $key=>$pickup)
                 <tr>
-                    <td>{{ $pickup['name'] }}</td>
+                    <td><span data-toggle="tooltip" data-html="true" data-placement="bottom" title="HP : {{ $pickup['hp'] }}">{{ $pickup['name'] }}</span></td>
                     <td>{{ $pickup['org'] }}</td>
                     <td>{{ $pickup['rent'] }}</td>
                     <td>{{ $pickup['from'] }}</td>

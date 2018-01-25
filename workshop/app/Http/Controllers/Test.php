@@ -16,7 +16,7 @@ use App\RentPrice;
 class Test extends Controller
 {
     var $data = [
-        'nama_orang' => 'M Salman Galileo',
+        'nama_orang' => 'Workshop HME',
         'sidebar' => [
             [
                 'state' => '',
@@ -32,7 +32,7 @@ class Test extends Controller
             ],
             [
                 'state' => '',
-                'link' => '#3',
+                'link' => 'log',
                 'fa' => 'fa fa-list-alt',
                 'text' => 'Log'
             ],
@@ -58,6 +58,7 @@ class Test extends Controller
             [
                 'id' => '1',
                 'name' => 'Salman',
+                'hp' => '081220061133',
                 'org' => 'WS',
                 'rent' => 'proyektor 1',
                 'from' => 'kemaren',
@@ -66,6 +67,7 @@ class Test extends Controller
             [
                 'id' => '2',
                 'name' => 'Fadel',
+                'hp' => '081220061133',
                 'org' => 'WS',
                 'rent' => 'proyektor 1',
                 'from' => 'kemaren',
@@ -74,6 +76,7 @@ class Test extends Controller
             [
                 'id' => '3',
                 'name' => 'Jundi',
+                'hp' => '081220061133',
                 'org' => 'WS',
                 'rent' => 'proyektor 1',
                 'from' => 'kemaren',
@@ -82,6 +85,7 @@ class Test extends Controller
             [
                 'id' => '4',
                 'name' => 'Abi',
+                'hp' => '081220061133',
                 'org' => 'WS',
                 'rent' => 'proyektor 1',
                 'from' => 'kemaren',
@@ -96,11 +100,13 @@ class Test extends Controller
     public function returnBarang()
     {
         $this->data['sidebar'][1]['state'] = 'active';
-        $this->data['header'] = ['main' => 'Pickup', 'sub' => 'Halaman untuk pengambilan barang'];
+        $this->data['header'] = ['main' => 'Return', 'sub' => 'Halaman untuk pengembalianbarang'];
         $return_log = [
             [
                 'id' => '1',
                 'name' => 'Salman',
+                'hp' => '081220061133',
+                'pickup' => 'Umar',
                 'org' => 'WS',
                 'rent' => 'proyektor 1',
                 'from' => 'kemaren',
@@ -109,6 +115,8 @@ class Test extends Controller
             [
                 'id' => '2',
                 'name' => 'Fadel',
+                'hp' => '081220061133',
+                'pickup' => 'Umar',
                 'org' => 'WS',
                 'rent' => 'proyektor 1',
                 'from' => 'kemaren',
@@ -117,6 +125,8 @@ class Test extends Controller
             [
                 'id' => '3',
                 'name' => 'Jundi',
+                'hp' => '081220061133',
+                'pickup' => 'Umar',
                 'org' => 'WS',
                 'rent' => 'proyektor 1',
                 'from' => 'kemaren',
@@ -125,6 +135,8 @@ class Test extends Controller
             [
                 'id' => '4',
                 'name' => 'Abi',
+                'hp' => '081220061133',
+                'pickup' => 'Umar',
                 'org' => 'WS',
                 'rent' => 'proyektor 1',
                 'from' => 'kemaren',
@@ -136,7 +148,64 @@ class Test extends Controller
         return view('return', $this->data);
     }
 
+    public function logBarang()
+    {
+        $this->data['sidebar'][2]['state'] = 'active';
+        $this->data['header'] = ['main' => 'Log', 'sub' => 'Halaman untuk pendataan peminjaman'];
+        $logs = [
+            [
+                'id' => '1',
+                'name' => 'Salman',
+                'status' => 'Tagged',
+                'update' => 'kemarin',
+                'pickup' => 'Umar',
+                'return' => 'Umar',
+                'org' => 'WS',
+                'rent' => 'proyektor 1',
+                'from' => 'kemaren',
+                'until' => 'besok',
+            ],
+            [
+                'id' => '2',
+                'name' => 'Fadel',
+                'status' => 'Tagged',
+                'update' => 'kemarin',
+                'pickup' => 'Umar',
+                'return' => 'Umar',
+                'org' => 'WS',
+                'rent' => 'proyektor 1',
+                'from' => 'kemaren',
+                'until' => 'besok',
+            ],
+            [
+                'id' => '3',
+                'name' => 'Jundi',
+                'status' => 'Tagged',
+                'update' => 'kemarin',
+                'pickup' => 'Umar',
+                'return' => 'Umar',
+                'org' => 'WS',
+                'rent' => 'proyektor 1',
+                'from' => 'kemaren',
+                'until' => 'besok',
+            ],
+            [
+                'id' => '4',
+                'name' => 'Abi',
+                'status' => 'Tagged',
+                'update' => 'kemarin',
+                'pickup' => 'Umar',
+                'return' => 'Umar',
+                'org' => 'WS',
+                'rent' => 'proyektor 1',
+                'from' => 'kemaren',
+                'until' => 'besok',
+            ],
+        ];
+        $this->data['logs'] = $logs;
 
+        return view('log', $this->data);
+    }
 
     public function connect()
     {

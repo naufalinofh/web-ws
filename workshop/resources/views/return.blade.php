@@ -18,7 +18,7 @@
             </tr>
             @foreach ($return_log as $key=>$return)
                 <tr>
-                    <td>{{ $return['name'] }}</td>
+                    <td><span data-toggle="tooltip" data-html="true" data-placement="bottom" title="HP : {{ $return['hp'] }}<br/>Pickup by : {{ $return['pickup'] }}">{{ $return['name'] }}</span></td>
                     <td>{{ $return['org'] }}</td>
                     <td>{{ $return['rent'] }}</td>
                     <td>{{ $return['from'] }}</td>
