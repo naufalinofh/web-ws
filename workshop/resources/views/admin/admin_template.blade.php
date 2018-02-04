@@ -23,6 +23,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         apply the skin class to the body tag so the changes take effect. -->
   <link rel="stylesheet" href='{{ asset("bower_components/admin-lte/dist/css/skins/skin-blue.min.css") }}'>
 
+  <link rel="stylesheet" href='{{ asset("css/app.css") }}'>
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -111,6 +113,17 @@ desired effect
   $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
     $('[data-toggle="tooltip"]').tooltip(); 
+  });
+</script>
+
+<script>
+  $(document).ready(function(){
+      $("#searchQuery").on("keyup", function() {
+          var value = $(this).val().toLowerCase();
+              $("#searchTable tr").slice(1).filter(function() {
+                  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+          });
+      });
   });
 </script>
 

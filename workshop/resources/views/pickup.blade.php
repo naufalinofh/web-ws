@@ -1,13 +1,22 @@
-@extends('admin.admin_template')
+ @extends('admin.admin_template')
 
 @section('content')
 <div class="box">
     <div class="box-header">
-        <h3 class="box-title">Daftar Tag</h3>
+        <div class="container-fluid">
+            <div class="row vertical-align">
+                <div class="col-lg-6 col-md-6">
+                    <h3 class="box-title">Daftar Barang</h3>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <input class="form-control pull-right" id="searchQuery" type="text" placeholder="Search..">
+                </div>
+            </div>
+        </div>
     </div>
     <!-- /.box-header -->
     <div class="box-body table-responsive no-padding">
-        <table class="table table-hover">
+        <table id="searchTable" class="table table-hover">
             <tr>
                 <th>Name</th>
                 <th>Organization</th>
@@ -33,7 +42,7 @@
                 <div class="modal-dialog">
                 <!-- Modal content-->
                     <div class="modal-content">
-                        <form action="/test" method="post">
+                        <form action="/pickuppost" method="post">
                             
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>

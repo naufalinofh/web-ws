@@ -95,6 +95,7 @@ class Test extends Controller
         $this->data['pickup_log'] = $pickup_log;
 
         return view('pickup', $this->data);
+        return $pickup_log[1];
     }
 
     public function returnBarang()
