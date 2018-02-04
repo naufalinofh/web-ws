@@ -33,7 +33,7 @@
                 <div class="modal-dialog">
                 <!-- Modal content-->
                     <div class="modal-content">
-                        <form action="/test" method="post">
+                        <form action="returnpost" method="post">
                             
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>

@@ -1,4 +1,4 @@
-@extends('admin.admin_template')
+ @extends('admin.admin_template')
 
 @section('content')
 <div class="box">
@@ -33,7 +33,7 @@
                 <div class="modal-dialog">
                 <!-- Modal content-->
                     <div class="modal-content">
-                        <form action="/test" method="post">
+                        <form action="/pickuppost" method="post">
                             
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
