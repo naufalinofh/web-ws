@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Log;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
     var $data = [
-        'nama_orang' => 'Workshop HME',
+        //'nama_orang' => 'Workshop HME',
         'sidebar' => [
             [
                 'state' => '',
@@ -37,8 +38,16 @@ class DashboardController extends Controller
         ],
     ];
 
+    public function __construct(){
+        
+        $this->middleware('auth');
+        //$this->data['nama_orang'] = Auth::check();
+    }
+
     public function pickupBarang()
     {
+       //return Auth::user();
+        //$this->data['nama_orang'] = Auth::user()->name;
         $this->data['sidebar'][0]['state'] = 'active';
         $this->data['header'] = ['main' => 'Pickup', 'sub' => 'Halaman untuk pengambilan barang'];
 
@@ -119,7 +128,6 @@ class DashboardController extends Controller
         $log->service->pickup_nim = $request->nim;
         $log->save();
         $log->service->save();
-        //
         return redirect()->route('pickup');
     }
 
@@ -136,6 +144,11 @@ class DashboardController extends Controller
         $log->service->save();
         //return $log;
         return redirect()->route('return');
+    }
+
+    public function logoutAdmin(){
+        Auth::logout();
+        return redirect()->route('pickup');
     }
 
     public function connect()
