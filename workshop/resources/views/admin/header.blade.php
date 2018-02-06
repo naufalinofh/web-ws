@@ -27,7 +27,7 @@
                         <!-- The user image in the navbar-->
                         <img src='{{ asset("customer_assets/Logo.png") }}' class="user-image" alt="User Image">
                         <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                        <span class="hidden-xs">{{ $nama_orang }}</span>
+                        <span class="hidden-xs">{{ Auth::user()->name }}</span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- The user image in the menu -->
@@ -35,7 +35,7 @@
                             <img src='{{ asset("customer_assets/Logo.png") }}' class="img-circle" alt="User Image">
     
                             <p>
-                                {{ $nama_orang }}
+                                {{ Auth::user()->name }}
                             <small>Member since Nov. 2012</small>
                             </p>
                         </li>
@@ -45,7 +45,7 @@
                                 <a href="#" class="btn btn-default btn-flat">Profile</a>
                             </div>
                             <div class="pull-right">
-                                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                <a href="/signout" class="btn btn-default btn-flat">Sign out</a>
                             </div>
                         </li>
                     </ul>

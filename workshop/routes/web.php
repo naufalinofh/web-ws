@@ -19,6 +19,7 @@ Route::get('/return', 'DashBoardController@returnBarang')->name('return');
 Route::get('/log','DashBoardController@logBarang')->name('log');
 Route::post('/pickuppost', 'DashBoardController@pickupPost');
 Route::post('/returnpost', 'DashBoardController@returnPost');
+Route::get('/signout','DashBoardController@logoutAdmin');
 
 /*
 Route::get('/', 'Test@pickup');
@@ -28,3 +29,6 @@ Route::get('/log', 'Test@logBarang');
 
 Route::get('/coba', 'Test@connect');
 */
+Auth::routes();
+
+//Route::get('/home', 'HomeController@index')->name('home');
