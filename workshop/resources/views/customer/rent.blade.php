@@ -98,7 +98,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="custom-form-text" for="organization">Organisasi:</label>
-                                    <input name="customer_organization" type="text" class="form-control custom-form-border" id="organization" placeholder="ex: URO">
+                                    <input name="customer_organization" type="text" class="form-control custom-form-border" id="organization" placeholder="ex: HME">
                                 </div>
                                 <div class="form-group">
                                     <label class="custom-form-text" for="email">Email:</label>
@@ -337,7 +337,6 @@
                             11: $qty_11
                         },
                         success: function(data) {
-                            alert("Test success");
                             // Empty the html
                             modal_body.empty();
 
